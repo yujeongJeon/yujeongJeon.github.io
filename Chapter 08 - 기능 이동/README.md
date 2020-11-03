@@ -329,13 +329,88 @@
 
 8. 반복문을 파이프라인으로 바꾸기
 
-<!-- TODO: 내용 작성 -->
+
+   > 반복문을 파이프라인으로 변경하여 논리의 흐름을 쉽게 파악할 수 있다.
+
+      <details>
+      <summary>개요 코드</summary>
+
+   ```javascript
+   const names = []
+   for (const person of input) {
+     if (person.job === 'programer') {
+       names.push(person.name)
+     }
+   }
+   ```
+
+   ```javascript
+   const names = input
+    .filter((person) => person.job === 'programer')
+    .map((person) => person.name)
+   ```
+
+    </details>
+
+    <details>
+    <summary>절차</summary>
+
+   1. 반복문에서 사용하는 컬렉션을 가리키는 변수를 하나 만든다.
+   2. 각각의 단위 행위를 파이프라인 연산으로 대체한다. 반복문의 첫줄부터 시작하며 각 단위의 행위를 수정한 뒤 테스트를 진행한다.
+   3. 수정이 완료되면 반복문을 제거한다.
+    </details>
+   <!-- TODO: 내용 작성 -->
+
 
 9. 죽은 코드 제거하기
 
-<!-- TODO: 내용 작성 -->
+   > 사용하지 않는 코드는 제거한다. 남겨놓으면 복잡하며 나중에 다시 사용하게 된다면 버전 관리 시스템을 이용한다.
+   <!-- TODO: 내용 작성 -->
+
 
 ## 논의 사항
 
 - 중첩함수  
   285p에서 중첩함수는 되도록 만들지 말라고 언급
+- 객체에서의 파이프라인
+
+  ```javascript
+  class Car {
+    constructor() {
+      this.make = 'Honda'
+      this.model = 'Accord'
+      this.color = 'white'
+    }
+
+    setMake(make) {
+      this.make = make
+      // 메모: 체이닝을 위해 this를 리턴합니다.
+      return this
+    }
+
+    setModel(model) {
+      this.model = model
+      // 메모: 체이닝을 위해 this를 리턴합니다.
+      return this
+    }
+
+    setColor(color) {
+      this.color = color
+      // 메모: 체이닝을 위해 this를 리턴합니다.
+      return this
+    }
+
+    save() {
+      console.log(this.make, this.model, this.color)
+      // 메모: 체이닝을 위해 this를 리턴합니다.
+      return this
+    }
+  }
+  const car = new Car()
+    .setColor('pink')
+    .setMake('Ford')
+    .setModel('F-150')
+    .save()
+  ```
+
+https://github.com/qkraudghgh/clean-code-javascript-ko#%EB%A9%94%EC%86%8C%EB%93%9C-%EC%B2%B4%EC%9D%B4%EB%8B%9D%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%84%B8%EC%9A%94
