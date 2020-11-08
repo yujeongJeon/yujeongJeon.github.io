@@ -120,3 +120,75 @@
 
    - 논의 사항
      - 팩토리 함수: https://ui.toast.com/weekly-pick/ko_20160905/
+
+5. 특이 케이스 추가하기
+
+- 특수한 경우의 공통 동작을 한곳에 모으자.
+
+- 리팩터링 과정에서 코드를 일괄적으로 바꿔야 한다면 해당 함수에 에러처리 구문을 넣어, 실수가 있는지 확인하자.
+
+- 특이 케이스의 경우라면 특이 케이스 객체를 반환하여 기본값 처리를 하자.
+
+-  데이터 구조를 변환하는 함수
+    - enrich: 부가 정보 추가
+    - transform :형태를 바꾸는 경우
+
+   
+> 특수한 경우의 공통 동작을 한곳에 모으자.
+
+   ```
+  const site = acquireSiteData();
+  const aCustomer = site.customer;
+  if(aCustomer === '미확인 고객') // 1. 반복되는 검사 케이스 확인
+    
+    
+  function isUnknown(aCustomer){
+      return aCustomer === '미확인 고객'
+  } // 2. 함수로 추출
+
+  // 3. 객체 자체에 unKnown 관련 정보와 특이케이스일 때의 정보를 삽입
+  function enrichSite(site){
+    const result = _.cloneDepp(site)
+    
+    if(isUnknown(result.customer)){
+      result.customer = unknownCustomer 
+    }
+  }
+
+// 4. 클라이언트(게스트)에서는 비교 구문 없이 참조만으로도 특이케이스일 때의 정보가 나옴.
+   
+   ```
+
+6. 어서션 추가하기
+
+- 항상 참이라고 가정하는 조건부 문장
+- 오류 찾기에 활용 가능
+- 특정 로직이 실행 될 때 필요한 프리컨디션을 나타냄 
+
+```
+applyDiscount(aNumber){
+    return aNumber - (this.discountRate * aNumber);
+} // 1. discountRate는 항상 양수라는 가정이 깔려 있음.
+
+assert(this.discountRate >= 0) // 2. 이런 어서션을 추가 할 수 있다.
+// 3. 필요하다면 discountRate의 게터에 추가도 가능하다.
+// 4. '반드시 참이어야 하는 것' 에 달자.
+```
+
+7. 제어 플래그를 탈출문으로 바꾸기
+
+- 반복문을 작성하다보면 isFind 같은 제어 플래그를 사용하는 경우가 있다.
+- 이런 친구들은 삭제하고 break, return 으로 해당 반복문을 끝내도록 하자.
+- 물론 이러기 위해서는 작게 추출되어야 하는 작업이 선행되어야 한다.
+
+```
+let found = false;
+for(name in list){
+  if(name === '기원'){
+    found = true // 제어 플래그
+  }
+
+  if(found){
+    // 제어 플래그에 의해 제어되는 반복문 내부 코드
+  }
+}
