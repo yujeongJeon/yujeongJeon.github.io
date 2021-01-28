@@ -395,90 +395,88 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="8-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;-&#xAC1D;&#xCCB4;-&#xB9CC;&#xB4E4;&#xAE30;">8. &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xAC1D;&#xCCB4; &#xB9CC;&#xB4E4;&#xAE30;</h2>
-<p>&#xB370;&#xC774;&#xD130; &#xBB49;&#xCE58;&#xB97C; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870;&#xB85C; &#xBB36;&#xAE30;<br></p>
 <ul>
+<li>&#xB370;&#xC774;&#xD130; &#xBB49;&#xCE58;&#xB97C; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870;&#xB85C; &#xBB36;&#xAE30;</li>
 <li>&#xC774; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870;&#xAC00; &#xBB38;&#xC81C; &#xC601;&#xC5ED;&#xC744; &#xAC04;&#xACB0;&#xD558;&#xAC8C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xCD94;&#xC0C1; &#xC601;&#xC5ED;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xB418;&#xC5B4; &#xCF54;&#xB4DC;&#xC758; &#xAC1C;&#xB150;&#xC801;&#xC778; &#xADF8;&#xB9BC;&#xC744; &#xB2E4;&#xC2DC; &#xC124;&#xACC4;&#xD560; &#xC218; &#xC788;&#xC74C;</li>
 </ul>
-<details>
-<summary>&#xC808;&#xCC28;</summary>
-
-1. &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870; &#xC0DD;&#xC131;<br>
-- &#xD074;&#xB798;&#xC2A4; &#xC120;&#xD638; <a href="https://www.martinfowler.com/bliki/ValueObject.html" target="_blank">(&#xAC12; &#xAC1D;&#xCCB4;)</a><br>
-2. &#xD14C;&#xC2A4;&#xD2B8;<br>
-3. &#xD568;&#xC218; &#xC120;&#xC5B8; &#xBC14;&#xAFB8;&#xAE30;&#xB85C; &#xC0C8; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870;&#xB97C; &#xC778;&#xC790;&#xB85C; &#xCD94;&#xAC00;<br>
-4. &#xD14C;&#xC2A4;&#xD2B8;<br>
-5. &#xD568;&#xC218; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xACF3;&#xC5D0;&#xC11C; &#xC0C8; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870;&#xB97C; &#xC778;&#xC790;&#xB85C; &#xB118;&#xAE30;&#xB3C4;&#xB85D; &#xC218;&#xC815;<br>
-6. &#xAE30;&#xC874; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC81C;&#xAC70;              
-
-</details>
-
-<details>
-<summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
-
-```js
-// :(
-const station = {
-    name: &apos;ZB1&apos;,
+<h3 id="&#xC808;&#xCC28;">&#xC808;&#xCC28;</h3>
+<hr>
+<ol>
+<li>&#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870; &#xC0DD;&#xC131;<br></li>
+<li>&#xD074;&#xB798;&#xC2A4; &#xC120;&#xD638; <a href="https://www.martinfowler.com/bliki/ValueObject.html" target="_blank">(&#xAC12; &#xAC1D;&#xCCB4;)</a><br></li>
+<li>&#xD14C;&#xC2A4;&#xD2B8;<br></li>
+<li>&#xD568;&#xC218; &#xC120;&#xC5B8; &#xBC14;&#xAFB8;&#xAE30;&#xB85C; &#xC0C8; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870;&#xB97C; &#xC778;&#xC790;&#xB85C; &#xCD94;&#xAC00;<br></li>
+<li>&#xD14C;&#xC2A4;&#xD2B8;<br></li>
+<li>&#xD568;&#xC218; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xACF3;&#xC5D0;&#xC11C; &#xC0C8; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870;&#xB97C; &#xC778;&#xC790;&#xB85C; &#xB118;&#xAE30;&#xB3C4;&#xB85D; &#xC218;&#xC815;<br></li>
+<li>&#xAE30;&#xC874; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC81C;&#xAC70;              </li>
+</ol>
+<hr>
+<h3 id="&#xAC1C;&#xC694;-&#xCF54;&#xB4DC;">&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// :(</span>
+<span class="hljs-keyword">const</span> station = {
+    name: <span class="hljs-string">&apos;ZB1&apos;</span>,
     readings: [
-        {temp: 47, time: &quot;2016-11-10 09:10&quot;},
-        {temp: 53, time: &quot;2016-11-10 09:20&quot;},
-        {temp: 58, time: &quot;2016-11-10 09:30&quot;},
-        {temp: 53, time: &quot;2016-11-10 09:40&quot;},
-        {temp: 51, time: &quot;2016-11-10 09:50&quot;}
+        {temp: <span class="hljs-number">47</span>, time: <span class="hljs-string">&quot;2016-11-10 09:10&quot;</span>},
+        {temp: <span class="hljs-number">53</span>, time: <span class="hljs-string">&quot;2016-11-10 09:20&quot;</span>},
+        {temp: <span class="hljs-number">58</span>, time: <span class="hljs-string">&quot;2016-11-10 09:30&quot;</span>},
+        {temp: <span class="hljs-number">53</span>, time: <span class="hljs-string">&quot;2016-11-10 09:40&quot;</span>},
+        {temp: <span class="hljs-number">51</span>, time: <span class="hljs-string">&quot;2016-11-10 09:50&quot;</span>}
     ]
 }
 
-const operationPlan = {
-    temperatureFloor: 50,
-    temperatureCeiling: 55
+<span class="hljs-keyword">const</span> operationPlan = {
+    temperatureFloor: <span class="hljs-number">50</span>,
+    temperatureCeiling: <span class="hljs-number">55</span>
 }
 
-const readingsOutsideRange = (station, min, max) =&gt; {
-    return station.readings.filter(r =&gt; r.temp &lt; min || r.temp &gt; max)
+<span class="hljs-keyword">const</span> readingsOutsideRange = (station, min, max) =&gt; {
+    <span class="hljs-keyword">return</span> station.readings.filter(r =&gt; r.temp &lt; min || r.temp &gt; max)
 }
 
-const alerts = readingsOutsideRange(station, operationPlan.temperatureFloor, operationPlan.temperatureCeiling)
+<span class="hljs-keyword">const</span> alerts = readingsOutsideRange(station, operationPlan.temperatureFloor, operationPlan.temperatureCeiling)
 
-// :)
-// (1) &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870; &#xCD94;&#xAC00;
-class NumberRange {
-    constructor(min, max) {
-        this._data = {min, max}
+<span class="hljs-comment">// :)</span>
+<span class="hljs-comment">// (1) &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870; &#xCD94;&#xAC00;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NumberRange</span> </span>{
+    <span class="hljs-keyword">constructor</span>(min, max) {
+        <span class="hljs-keyword">this</span>._data = {min, max}
     }
 
-    get min() {return this._data.min}
-    get max() {return this._data.max}
+    get min() {<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._data.min}
+    get max() {<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._data.max}
 }
 
-// (2) &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xCD94;&#xAC00;
-const readingsOutsideRange = (station, min, max, range = {}) =&gt; {
-    return station.readings.filter(r =&gt; r.temp &lt; min || r.temp &gt; max)
+<span class="hljs-comment">// (2) &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xCD94;&#xAC00;</span>
+<span class="hljs-keyword">const</span> readingsOutsideRange = (station, min, max, range = {}) =&gt; {
+    <span class="hljs-keyword">return</span> station.readings.filter(r =&gt; r.temp &lt; min || r.temp &gt; max)
 }
 
-// (3) &#xC0C8; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xC804;&#xB2EC;
-const range = new NumberRange(50, 55)
-const alerts = readingsOutsideRange(station, operationPlan.temperatureFloor, range)
+<span class="hljs-comment">// (3) &#xC0C8; &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xC804;&#xB2EC;</span>
+<span class="hljs-keyword">const</span> range = <span class="hljs-keyword">new</span> NumberRange(<span class="hljs-number">50</span>, <span class="hljs-number">55</span>)
+<span class="hljs-keyword">const</span> alerts = readingsOutsideRange(station, operationPlan.temperatureFloor, range)
 
-// (4) &#xC0C8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC0AC;&#xC6A9;
-const readingsOutsideRange = (station, range) =&gt; {
-    return station.readings.filter(r =&gt; r.temp &lt; range.min || r.temp &gt; range.max)
+<span class="hljs-comment">// (4) &#xC0C8; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC0AC;&#xC6A9;</span>
+<span class="hljs-keyword">const</span> readingsOutsideRange = (station, range) =&gt; {
+    <span class="hljs-keyword">return</span> station.readings.filter(r =&gt; r.temp &lt; range.min || r.temp &gt; range.max)
 }
 
-// (5) NumberRange &#xD074;&#xB798;&#xC2A4;&#xC5D0; readingsOutsideRange &#xB85C;&#xC9C1; &#xC62E;&#xAE30;&#xAE30;
-class NumberRange {
-    constructor(min, max) {
-        this._data = {min, max}
+<span class="hljs-comment">// (5) NumberRange &#xD074;&#xB798;&#xC2A4;&#xC5D0; readingsOutsideRange &#xB85C;&#xC9C1; &#xC62E;&#xAE30;&#xAE30;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NumberRange</span> </span>{
+    <span class="hljs-keyword">constructor</span>(min, max) {
+        <span class="hljs-keyword">this</span>._data = {min, max}
     }
 
-    get min() {return this._data.min}
-    get max() {return this._data.max}
+    get min() {<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._data.min}
+    get max() {<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._data.max}
 
-    contains(arg) {return arg &gt;= this.min &amp;&amp; arg <= this.max}="" }="" const="" readingsoutsiderange="(station," range)=""> {
-    return station.readings.filter(r =&gt; !range.contains(r.temp))
+    contains(arg) {<span class="hljs-keyword">return</span> arg &gt;= <span class="hljs-keyword">this</span>.min &amp;&amp; arg &lt;= <span class="hljs-keyword">this</span>.max}
 }
-```
 
-</=></details>
+<span class="hljs-keyword">const</span> readingsOutsideRange = (station, range) =&gt; {
+    <span class="hljs-keyword">return</span> station.readings.filter(r =&gt; !range.contains(r.temp))
+}
+</code></pre>
+
                                 
                                 </section>
                             
@@ -521,7 +519,7 @@ class NumberRange {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6-8. 매개변수 객체 만들기","level":"2.5.8","depth":2,"next":{"title":"6-9. 여러 함수를 클래스로 묶기","level":"2.5.9","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-9.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-9.md","articles":[]},"previous":{"title":"6-7. 변수 이름 바꾸기","level":"2.5.7","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-7.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter 06 - 기본적인 리팩터링/pages/6-8.md","mtime":"2021-01-28T08:45:48.332Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-28T08:56:19.789Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6-8. 매개변수 객체 만들기","level":"2.5.8","depth":2,"next":{"title":"6-9. 여러 함수를 클래스로 묶기","level":"2.5.9","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-9.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-9.md","articles":[]},"previous":{"title":"6-7. 변수 이름 바꾸기","level":"2.5.7","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-7.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter 06 - 기본적인 리팩터링/pages/6-8.md","mtime":"2021-01-28T09:35:46.406Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-28T09:36:25.065Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -529,6 +527,10 @@ class NumberRange {
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

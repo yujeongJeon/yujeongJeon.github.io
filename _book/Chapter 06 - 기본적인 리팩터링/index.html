@@ -395,116 +395,20 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="chapter-06-&#xAE30;&#xBCF8;&#xC801;&#xC778;-&#xB9AC;&#xD329;&#xD130;&#xB9C1;">Chapter 06. &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xB9AC;&#xD329;&#xD130;&#xB9C1;</h1>
-<h2 id="1-&#xD568;&#xC218;-&#xCD94;&#xCD9C;&#xD558;&#xAE30;">1. &#xD568;&#xC218; &#xCD94;&#xCD9C;&#xD558;&#xAE30;</h2>
-<blockquote>
-<p>&#xBAA9;&#xC801;&#xACFC; &#xAD6C;&#xD604;&#xC5D0; &#xB530;&#xB978; &#xD568;&#xC218;</p>
-</blockquote>
-  <details>
-   <summary>&#xC808;&#xCC28;</summary>
+<ul>
+<li><a href="pages/6-1.html">6-1. &#xD568;&#xC218; &#xCD94;&#xCD9C;&#xD558;&#xAE30;</a></li>
+<li><a href="pages/6-2.html">6-2. &#xD568;&#xC218; &#xC778;&#xB77C;&#xC778;&#xD558;&#xAE30;</a></li>
+<li><a href="pages/6-3.html">6-3. &#xBCC0;&#xC218; &#xCD94;&#xCD9C;&#xD558;&#xAE30;</a></li>
+<li><a href="pages/6-4.html">6-4. &#xBCC0;&#xC218; &#xC778;&#xB77C;&#xC778;&#xD558;&#xAE30;</a></li>
+<li><a href="pages/6-5.html">6-5. &#xD568;&#xC218; &#xC120;&#xC5B8; &#xBC14;&#xAFB8;&#xAE30;</a></li>
+<li><a href="pages/6-6.html">6-6. &#xBCC0;&#xC218; &#xCEA1;&#xC290;&#xD654;&#xD558;&#xAE30;</a></li>
+<li><a href="pages/6-7.html">6-7. &#xBCC0;&#xC218; &#xC774;&#xB984; &#xBC14;&#xAFB8;&#xAE30;</a></li>
+<li><a href="pages/6-8.html">6-8. &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xAC1D;&#xCCB4; &#xB9CC;&#xB4E4;&#xAE30;</a></li>
+<li><a href="pages/6-9.html">6-9. &#xC5EC;&#xB7EC; &#xD568;&#xC218;&#xB97C; &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xBB36;&#xAE30;</a></li>
+<li><a href="pages/6-10.html">6-10. &#xC5EC;&#xB7EC; &#xD568;&#xC218;&#xB97C; &#xBCC0;&#xD658; &#xD568;&#xC218;&#xB85C; &#xBB36;&#xAE30;</a></li>
+<li><a href="pages/6-11.html">6-11. &#xB2E8;&#xACC4; &#xCABC;&#xAC1C;&#xAE30;</a></li>
+</ul>
 
-   1. &#xD568;&#xC218;&#xC758; &#xBAA9;&#xC801;&#xC744; &#xB4DC;&#xB7EC;&#xB0B4;&#xB294; &#xC774;&#xB984;&#xC744; &#xBD99;&#xC784;<br>
-   2. &#xCD94;&#xCD9C;&#xD560; &#xCF54;&#xB4DC;&#xB97C; &#xC0C8; &#xD568;&#xC218;&#xC5D0; &#xBCF5;&#xC0AC;<br>
-   3. &#xCC38;&#xC870;&#xD558;&#xB294; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB294; &#xC778;&#xC218;&#xB85C; &#xC804;&#xB2EC;<br>
-       - &#xC0C8; &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBCC0;&#xC218;&#xB294; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C;<br>
-       - &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xC758; &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD560; &#xACBD;&#xC6B0; &#xC0C8; &#xD568;&#xC218;&#xC758; &#xACB0;&#xACFC;&#xB85C; &#xC804;&#xB2EC;<br>
-   4. &#xC0C8;&#xB85C; &#xB9CC;&#xB4E0; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xBB38;&#xC73C;&#xB85C; &#xC218;&#xC815;<br>
-
-   </details>
-
-   <details>
-    <summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
-
-    ```js
-    const SME_ALERT_CODE = {
-        APPROVAL_EXPIRED: &apos;APPROVAL_EXPIRED&apos;,
-        NOT_MATCH_LOGIN_INFO: &apos;NOT_MATCH_LOGIN_INFO&apos;
-    }
-
-    const VALID_CODE = {
-        &apos;0&apos;: &apos;normal&apos;,
-        &apos;1&apos;: &apos;error&apos;,
-        &apos;2&apos;: &apos;expired&apos;,
-        &apos;3&apos;: &apos;different&apos;
-    }
-
-    // :( old
-    const getLoanInfo = async (encryptParam) =&gt; {
-        const {validationCode} = await checkValidation({encryptParam})
-        const validCode = VALID_CODE[validationCode]
-
-        // &#xC720;&#xD6A8;&#xD558;&#xC9C0; &#xC54A;&#xC740; validCode &#xCC98;&#xB9AC;
-        // NF&#xAD00;&#xB9AC;&#xBC88;&#xD638; &#xC624;&#xB958;
-        if (validCode === &apos;error&apos;) {
-            goMain()
-        }
-        // &#xB300;&#xCD9C;&#xC9C4;&#xD589;&#xC815;&#xBCF4; &#xB9CC;&#xB8CC;
-        else if (validCode === &apos;expired&apos;) {
-            showAlert(SME_ALERT_CODE.APPROVAL_EXPIRED)
-        }
-        // &#xBA85;&#xC758; &#xBD88;&#xC77C;&#xCE58;
-        else if (validCode === &apos;different&apos;) {
-            showAlert(SME_ALERT_CODE.NOT_MATCH_LOGIN_INFO)
-        }
-    }
-
-    // :) good
-    // 6.5 &#xD568;&#xC218; &#xC120;&#xC5B8; &#xBC14;&#xAFB8;&#xAE30;
-    const nfValidation = async (encryptParam) =&gt; {
-        const {validationCode} = await checkValidation({encryptParam})
-        handleInvalid(VALID_CODE[validationCode])
-    }
-
-    const handleInvalid = (validCode) =&gt; {
-        if (validCode === &apos;error&apos;) {
-            goMain()
-        }
-        else if (validCode === &apos;expired&apos;) {
-            showAlert(SME_ALERT_CODE.APPROVAL_EXPIRED)
-        }
-        else if (validCode === &apos;different&apos;) {
-            showAlert(SME_ALERT_CODE.NOT_MATCH_LOGIN_INFO)
-        }
-    }
-    ```
-   </details>
-
-
-<h2 id="2-&#xD568;&#xC218;-&#xC778;&#xB77C;&#xC778;&#xD558;&#xAE30;">2. &#xD568;&#xC218; &#xC778;&#xB77C;&#xC778;&#xD558;&#xAE30;</h2>
-<blockquote>
-<p>&#xBCF8;&#xBB38; &#xCF54;&#xB4DC;&#xAC00; &#xD568;&#xC218;&#xBA85;&#xB9CC;&#xD07C;&#xC774;&#xB098; &#xBA85;&#xD655;&#xD558;&#xAC70;&#xB098; &#xAC04;&#xC811; &#xD638;&#xCD9C;&#xC774; &#xACFC;&#xD558;&#xAC8C; &#xB9CE;&#xC744; &#xACBD;&#xC6B0;</p>
-</blockquote>
-  <details>
-   <summary>&#xC808;&#xCC28;</summary>
-
-   1. &#xC11C;&#xBE0C; &#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB529;&#xB41C; &#xBA54;&#xC11C;&#xB4DC;&#xC778;&#xC9C0; &#xCCB4;&#xD06C;<br>
-   - &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB529;&#xB41C; &#xBA54;&#xC11C;&#xB4DC;&#xB294; &#xC778;&#xB77C;&#xC778; &#xAE08;&#xC9C0;<br>
-   2. &#xBAA8;&#xB4E0; &#xD638;&#xCD9C;&#xBB38;&#xC744; (&#xC810;&#xC9C4;&#xC801;&#xC73C;&#xB85C;) &#xC778;&#xB77C;&#xC778;&#xC73C;&#xB85C; &#xAD50;&#xCCB4;<br>
-
-   </details>
-
-   <details>
-    <summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
-
-    ```javascript
-    // :(
-    const isLastStep = (step) =&gt; step === &quot;4&quot;;
-
-    const showExitAlert = () =&gt; {
-      const exitAlertCode = isLastStep(step)
-        ? SME_ALERT_CODE.EXIT.SAVE
-        : SME_ALERT_CODE.EXIT.NOT_SAVE;
-      showAlert(exitAlertCode);
-    };
-
-    // :)
-    const showExitAlert = () =&gt; {
-      const exitAlertCode =
-        step === &quot;4&quot; ? SME_ALERT_CODE.EXIT.SAVE : SME_ALERT_CODE.EXIT.NOT_SAVE;
-      showAlert(exitAlertCode);
-    };
-    ```
-
-   </details>
                                 
                                 </section>
                             
@@ -547,7 +451,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chapter 06","level":"2.5","depth":1,"next":{"title":"6-1. 함수 추출하기","level":"2.5.1","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-1.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-1.md","articles":[]},"previous":{"title":"Chapter 04","level":"2.4","depth":1,"path":"Chapter 04 - 테스트 구축하기/README.md","ref":"Chapter 04 - 테스트 구축하기/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter 06 - 기본적인 리팩터링/README.md","mtime":"2021-01-28T08:11:26.413Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-28T08:56:19.789Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chapter 06","level":"2.5","depth":1,"next":{"title":"6-1. 함수 추출하기","level":"2.5.1","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-1.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-1.md","articles":[]},"previous":{"title":"Chapter 04","level":"2.4","depth":1,"path":"Chapter 04 - 테스트 구축하기/README.md","ref":"Chapter 04 - 테스트 구축하기/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter 06 - 기본적인 리팩터링/README.md","mtime":"2021-01-28T09:38:51.935Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-28T09:36:25.065Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -555,6 +459,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

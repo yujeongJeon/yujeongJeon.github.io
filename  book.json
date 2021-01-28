@@ -1,5 +1,5 @@
 {
-    "plugins": ["-sharing"],
+    "plugins": ["-sharing", "expandable-chapters"],
     "variables": {
         "BASE_URL": "https://refactoring.github.io"
     }

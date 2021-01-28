@@ -1,112 +1,13 @@
 # Chapter 06. 기본적인 리팩터링
 
-## 1. 함수 추출하기
-
-> 목적과 구현에 따른 함수
-  
-  <details>
-   <summary>절차</summary>
-
-   1. 함수의 목적을 드러내는 이름을 붙임<br />
-   2. 추출할 코드를 새 함수에 복사<br />
-   3. 참조하는 지역변수는 인수로 전달<br />
-       - 새 함수에서만 사용되는 변수는 지역변수로<br />
-       - 지역변수의 값을 변경할 경우 새 함수의 결과로 전달<br />
-   4. 새로 만든 함수를 호출하는 문으로 수정<br />
-
-   </details>
-
-   <details>
-    <summary>개요 코드</summary>
-
-    ```js
-    const SME_ALERT_CODE = {
-        APPROVAL_EXPIRED: 'APPROVAL_EXPIRED',
-        NOT_MATCH_LOGIN_INFO: 'NOT_MATCH_LOGIN_INFO'
-    }
-
-    const VALID_CODE = {
-        '0': 'normal',
-        '1': 'error',
-        '2': 'expired',
-        '3': 'different'
-    }
-
-    // :( old
-    const getLoanInfo = async (encryptParam) => {
-        const {validationCode} = await checkValidation({encryptParam})
-        const validCode = VALID_CODE[validationCode]
-
-        // 유효하지 않은 validCode 처리
-        // NF관리번호 오류
-        if (validCode === 'error') {
-            goMain()
-        }
-        // 대출진행정보 만료
-        else if (validCode === 'expired') {
-            showAlert(SME_ALERT_CODE.APPROVAL_EXPIRED)
-        }
-        // 명의 불일치
-        else if (validCode === 'different') {
-            showAlert(SME_ALERT_CODE.NOT_MATCH_LOGIN_INFO)
-        }
-    }
-
-    // :) good
-    // 6.5 함수 선언 바꾸기
-    const nfValidation = async (encryptParam) => {
-        const {validationCode} = await checkValidation({encryptParam})
-        handleInvalid(VALID_CODE[validationCode])
-    }
-
-    const handleInvalid = (validCode) => {
-        if (validCode === 'error') {
-            goMain()
-        }
-        else if (validCode === 'expired') {
-            showAlert(SME_ALERT_CODE.APPROVAL_EXPIRED)
-        }
-        else if (validCode === 'different') {
-            showAlert(SME_ALERT_CODE.NOT_MATCH_LOGIN_INFO)
-        }
-    }
-    ```
-   </details>
-
-
-## 2. 함수 인라인하기
-
-> 본문 코드가 함수명만큼이나 명확하거나 간접 호출이 과하게 많을 경우
-
-  <details>
-   <summary>절차</summary>
-
-   1. 서브 클래스에서 오버라이딩된 메서드인지 체크<br />
-   - 오버라이딩된 메서드는 인라인 금지<br />
-   2. 모든 호출문을 (점진적으로) 인라인으로 교체<br />
-
-   </details>
-
-   <details>
-    <summary>개요 코드</summary>
-
-    ```javascript
-    // :(
-    const isLastStep = (step) => step === "4";
-
-    const showExitAlert = () => {
-      const exitAlertCode = isLastStep(step)
-        ? SME_ALERT_CODE.EXIT.SAVE
-        : SME_ALERT_CODE.EXIT.NOT_SAVE;
-      showAlert(exitAlertCode);
-    };
-
-    // :)
-    const showExitAlert = () => {
-      const exitAlertCode =
-        step === "4" ? SME_ALERT_CODE.EXIT.SAVE : SME_ALERT_CODE.EXIT.NOT_SAVE;
-      showAlert(exitAlertCode);
-    };
-    ```
-
-   </details>
+- [6-1. 함수 추출하기](./pages/6-1.md)
+- [6-2. 함수 인라인하기](./pages/6-2.md)
+- [6-3. 변수 추출하기](./pages/6-3.md)
+- [6-4. 변수 인라인하기](./pages/6-4.md)
+- [6-5. 함수 선언 바꾸기](./pages/6-5.md)
+- [6-6. 변수 캡슐화하기](./pages/6-6.md)
+- [6-7. 변수 이름 바꾸기](./pages/6-7.md)
+- [6-8. 매개변수 객체 만들기](./pages/6-8.md)
+- [6-9. 여러 함수를 클래스로 묶기](./pages/6-9.md)
+- [6-10. 여러 함수를 변환 함수로 묶기](./pages/6-10.md)
+- [6-11. 단계 쪼개기](./pages/6-11.md)
