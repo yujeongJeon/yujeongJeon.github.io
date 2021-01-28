@@ -1,0 +1,577 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 04 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Chapter 06 - 기본적인 리팩터링/" />
+    
+    
+    <link rel="prev" href="../Chapter 03 - 코드에서 나는 악취/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    스터디 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Chapters</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Chapter 01 - 리팩터링 첫 번째 예시/">
+            
+                <a href="../Chapter 01 - 리팩터링 첫 번째 예시/">
+            
+                    
+                    Chapter 01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../Chapter 02 - 리팩터링 원칙/">
+            
+                <a href="../Chapter 02 - 리팩터링 원칙/">
+            
+                    
+                    Chapter 02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../Chapter 03 - 코드에서 나는 악취/">
+            
+                <a href="../Chapter 03 - 코드에서 나는 악취/">
+            
+                    
+                    Chapter 03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Chapter 04
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../Chapter 06 - 기본적인 리팩터링/">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/">
+            
+                    
+                    Chapter 06
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-1.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-1.html">
+            
+                    
+                    6-1. 함수 추출하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-2.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-2.html">
+            
+                    
+                    6-2. 함수 인라인하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-3.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-3.html">
+            
+                    
+                    6-3. 변수 추출하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-4.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-4.html">
+            
+                    
+                    6-4. 변수 인라인하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-5.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-5.html">
+            
+                    
+                    6-5. 함수 선언 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-6.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-6.html">
+            
+                    
+                    6-6. 변수 캡슐화하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-7.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-7.html">
+            
+                    
+                    6-7. 변수 이름 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-8.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-8.html">
+            
+                    
+                    6-8. 매개변수 객체 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-9.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-9.html">
+            
+                    
+                    6-9. 여러 함수를 클래스로 묶기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-10.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-10.html">
+            
+                    
+                    6-10. 여러 함수를 변환 함수로 묶기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-11.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-11.html">
+            
+                    
+                    6-11. 단계 쪼개기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../Chapter 07 - 캡슐화/">
+            
+                <a href="../Chapter 07 - 캡슐화/">
+            
+                    
+                    Chapter 07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Chapter 08 - 기능 이동/">
+            
+                <a href="../Chapter 08 - 기능 이동/">
+            
+                    
+                    Chapter 08
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 04</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-04---&#xD14C;&#xC2A4;&#xD2B8;-&#xAD6C;&#xCD95;&#xD558;&#xAE30;">Chapter 04 - &#xD14C;&#xC2A4;&#xD2B8; &#xAD6C;&#xCD95;&#xD558;&#xAE30;</h1>
+<ul>
+<li>&#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xAC00; &#xC788;&#xC5B4;&#xC57C; &#xC81C;&#xB300;&#xB85C; &#xB9AC;&#xD329;&#xD130;&#xB9C1; &#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li><p>&#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xAC00; &#xC788;&#xC73C;&#xBA74; &#xD6A8;&#xC728;&#xC774; &#xB192;&#xC544;&#xC9C4;&#xB2E4;.</p>
+</li>
+<li><p>&#xC790;&#xAC00; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xC758; &#xAC00;&#xCE58;</p>
+<ul>
+<li>&#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC644;&#xC804;&#xD788; &#xC790;&#xB3D9;&#xD654;&#xD558;&#xC790;. &#xACB0;&#xACFC; &#xCCB4;&#xD06C;&#xAE4C;&#xC9C0;.</li>
+<li>&#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xAC00; &#xC788;&#xC73C;&#xBA74; &#xD68C;&#xADC0; &#xBC84;&#xADF8;, &#xC989; &#xC0C8;&#xB85C;&#xC6B4; &#xAE30;&#xB2A5; &#xCD94;&#xAC00;&#xB85C;, &#xAE30;&#xC874;&#xC5D0; &#xC798; &#xB3D9;&#xC791;&#xD558;&#xB358; &#xAE30;&#xB2A5;&#xC5D0;&#xC11C; &#xBC84;&#xADF8;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C; &#xACBD;&#xC6B0;&#xB97C; &#xAC70;&#xC758; &#xC989;&#xC2DC; &#xCC3E;&#xC544;&#xB0BC; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB85C; &#xC2A4;&#xD399; &#xC815;&#xB9AC; &amp; &#xC815;&#xC758; -&gt; &#xAD6C;&#xD604; -&gt; &#xD14C;&#xC2A4;&#xD2B8; -&gt; &#xB9AC;&#xD329;&#xD1A0;&#xB9C1; = TDD</li>
+<li>&#xB9AC;&#xD329;&#xD1A0;&#xB9C1;&#xD558;&#xB824;&#xBA74; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB294; &#xD544;&#xC694;&#xD558;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li><p>&#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xC0D8;&#xD50C; &#xCF54;&#xB4DC;</p>
+<ul>
+<li><p><img src="images/sampleCode.jpeg" alt="sampleCode"></p>
+<ul>
+<li>&#xC5D1;&#xC140;&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xAE30;&#xB2A5;&#xC774;&#xB77C; &#xC0DD;&#xAC01;&#xD558;&#xBA74; &#xB41C;&#xB2E4;.</li>
+<li><p>&#xBE44;&#xC9C0;&#xB2C8;&#xC2A4; &#xB85C;&#xC9C1;&#xC740; &#xC0DD;&#xC0B0;&#xC790;&#xB97C; &#xD45C;&#xD604;&#xD558;&#xB294; Producer, &#xC9C0;&#xC5ED; &#xC804;&#xCCB4;&#xB97C; &#xD45C;&#xD604;&#xD558;&#xB294; Province &#xB450; &#xAC1C;&#xB85C; &#xAD6C;&#xC131;&#xB41C;&#xB2E4;.</p>
+</li>
+<li><p><img src="images/provinceClass.jpeg" alt="provinceClass"></p>
+<ul>
+<li>Province &#xD074;&#xB798;&#xC2A4;&#xB294; &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD1B5;&#xD574; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBC1B;&#xACE0;, &#xC774;&#xB97C; Private &#xBCC0;&#xC218;&#xC5D0; &#xD560;&#xB2F9;&#xD55C;&#xB2E4;.</li>
+<li>Province &#xD074;&#xB798;&#xC2A4;&#xB294; &#xAC8C;&#xD130;&#xC640; &#xC138;&#xD130;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xB2E4;&#xC591;&#xD55C; &#xB370;&#xC774;&#xD130; &#xC811;&#xADFC;&#xC790;&#xB4E4;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;.</li>
+<li>Province &#xD074;&#xB798;&#xC2A4;&#xB294; &#xC0DD;&#xC0C1; &#xBD80;&#xC871;&#xBD84;, &#xC218;&#xC775;&#xC744; &#xACC4;&#xC0B0;&#xD558;&#xB294; &#xBA64;&#xBC84;&#xD568;&#xC218;&#xB4E4;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;.</li>
+</ul>
+</li>
+<li><p>sampleProvinceData &#xD568;&#xC218;&#xB294; provinceClass&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4; &#xB54C; &#xC0DD;&#xC131;&#xC790;&#xB85C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBC00;&#xC5B4; &#xB123;&#xC5B4;&#xC8FC;&#xB294; &#xD568;&#xC218;&#xB2E4;. &#xD574;&#xB2F9; &#xD568;&#xC218;&#xC758; &#xD14C;&#xC2A4;&#xD2B8;&#xB294; &#xBC18;&#xD658; &#xAC12;&#xC73C;&#xB85C; Province &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD574;&#xBCF4;&#xBA74; &#xB41C;&#xB2E4;.</p>
+</li>
+<li><p><img src="images/producerClass.jpeg" alt="producerClass"></p>
+<ul>
+<li>Producer &#xD074;&#xB798;&#xC2A4;&#xB294; &#xC8FC;&#xB85C; &#xB370;&#xC774;&#xD130; &#xC800;&#xC7A5;&#xC18C;&#xB85C; &#xC4F0;&#xC778;&#xB2E4;. (&#xAC8C;&#xD130; + &#xC138;&#xD130; + &#xB0B4;&#xBD80;&#xBCC0;&#xC218;)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="43---47-&#xD14C;&#xC2A4;&#xD2B8;-&#xCF54;&#xB4DC;-&#xC2E4;&#xC2B5;">4.3 - 4.7 &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC; &#xC2E4;&#xC2B5;</h3>
+<p><a href="examples/province.js">province &#xD074;&#xB798;&#xC2A4;</a></p>
+<p><a href="examples/producer.js">producer &#xD074;&#xB798;&#xC2A4;</a></p>
+<p><a href="examples/province.test.js">Mocha, Chai&#xB85C; &#xC791;&#xC131;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;</a></p>
+<p><strong>&#xCC38;&#xACE0; : <a href="https://www.chaijs.com/api/bdd/" target="_blank">chai &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; Document</a></strong></p>
+<h4 id="bdd">BDD</h4>
+<p>BDD&#xB294; (Behavior Driven Development )&#xB85C; TDD&#xB97C; &#xADFC;&#xAC04;&#xC73C;&#xB85C; &#xD30C;&#xC0DD;&#xB41C; &#xAC1C;&#xBC1C; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>TDD&#xC5D0;&#xC11C; &#xD55C; &#xBC1C; &#xB354; &#xB098;&#xC544;&#xAC00; &#xD14C;&#xC2A4;&#xD2B8;&#xCF00;&#xC774;&#xC2A4; &#xC790;&#xCCB4;&#xAC00; &#xC694;&#xAD6C;&#xC0AC;&#xC591;&#xC774; &#xB418;&#xB3C4;&#xB85D; &#xD558;&#xB294; &#xAC1C;&#xBC1C;&#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>BDD&#xB97C; &#xD1B5;&#xD574; &#xAC1C;&#xBC1C;&#xC744; &#xD558;&#xAC8C; &#xB41C;&#xB2E4;&#xBA74; &#xD14C;&#xC2A4;&#xD2B8; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xC774;&#xB984;&#xC744; </p>
+<p>&quot;&#xC774; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC5B4;&#xB5A4; &#xD589;&#xC704;&#xB97C; &#xD574;&#xC57C;&#xD55C;&#xB2E4; (should do someting)&quot; &#xB77C;&#xB294; &#xC2DD;&#xC758; &#xBB38;&#xC7A5;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xD558;&#xC5EC; </p>
+<p>&#xD589;&#xC704;&#xC5D0; &#xB300;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8;&#xC5D0; &#xC9D1;&#xC911;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>BDD&#xB294; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD14C;&#xC2A4;&#xD2B8; &#xCF00;&#xC774;&#xC2A4;&#xB97C; &#xC791;&#xC131;&#xD558;&#xBA70; &#xD568;&#xC218; &#xB2E8;&#xC704; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xAD8C;&#xC7A5;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><a href="https://beomseok95.tistory.com/293" target="_blank">&#xCD9C;&#xCC98;</a></p>
+<p>&#xBA3C;&#xC800; TDD&#xB294; &#xCF54;&#xB4DC; &#xC790;&#xCCB4;&#xC5D0; &#xC9D1;&#xC911;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; BDD&#xC5D0;&#xC11C; &#xB9D0;&#xD558;&#xB294; Side Effect&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xACE0;, &#xCF54;&#xB4DC;&#xC5D0; &#xC9D1;&#xC911;&#xB41C; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB294; &#xACB0;&#xAD6D; &#xC774;&#xAC83;&#xB9CC;&#xC73C;&#xB85C; &#xBE44;&#xC9C0;&#xB2C8;&#xC2A4; &#xC694;&#xAD6C; &#xC0AC;&#xD56D;&#xC5D0; &#xB530;&#xB978; &#xB85C;&#xC9C1;&#xC744; &#xD30C;&#xC545;&#xD558;&#xAE30; &#xC5B4;&#xB824;&#xC6CC;&#xC9C4;&#xB2E4;. &#xB610;&#xD55C; &#xC774;&#xB7EC;&#xD55C; &#xC810;&#xC740; &#xACB0;&#xAD6D; &#xBE44;&#xC9C0;&#xB2C8;&#xC2A4; &#xC694;&#xAD6C; &#xC0AC;&#xD56D;&#xC774; &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xC744; &#xB54C; &#xAE30;&#xC874; &#xBE44;&#xC9C0;&#xB2C8;&#xC2A4; &#xB85C;&#xC9C1;&#xACFC; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD558;&#xB294;&#xB370; &#xC788;&#xC5B4; &#xBE44;&#xAD50;&#xC801; BDD &#xBCF4;&#xB2E4; &#xD070; &#xCF54;&#xC2A4;&#xD2B8;&#xB97C; &#xAC00;&#xC838;&#xB2E4; &#xC8FC;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xB41C;&#xB2E4;.</p>
+<p>BDD&#xB294; TDD&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB294; &#xAC1C;&#xB150;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD14C;&#xC2A4;&#xD2B8; &#xC8FC;&#xB3C4; &#xAC1C;&#xBC1C; &#xC790;&#xCCB4;&#xB85C;&#xB9CC; &#xBD24;&#xC744; &#xB54C;&#xB294; &#xB450; &#xAC1C;&#xB97C; &#xB098;&#xB204;&#xB294; &#xAC83;&#xC774; &#xD070; &#xC758;&#xBBF8;&#xAC00; &#xC5C6;&#xC9C0;&#xB9CC; &#xCF54;&#xB4DC; &#xC790;&#xCCB4;&#xC5D0; &#xC9D1;&#xC911;&#xB41C; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB85C; &#xC778;&#xD574; &#xBC1C;&#xC0DD;&#xD558;&#xB294; TDD&#xC758; &#xB2E8;&#xC810;&#xC744; BDD&#xC5D0;&#xC11C;&#xB294; Side Effect&#xB97C; &#xC81C;&#xC678;&#xD55C; Behavior &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xBE44;&#xC9C0;&#xB2C8;&#xC2A4; &#xC694;&#xAD6C; &#xC0AC;&#xD56D;&#xC5D0; &#xC9D1;&#xC911;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC880; &#xB354; &#xC758;&#xB3C4;&#xC640; &#xBAA9;&#xC801;&#xC744; &#xAD6C;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xD55C; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC; &#xC791;&#xC131; &#xBC29;&#xBC95;&#xC774;&#xB77C;&#xACE0; &#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><a href="https://yorr.tistory.com/26" target="_blank">&#xCD9C;&#xCC98;</a></p>
+<h4 id="&#xD53D;&#xC2A4;&#xCCD0;">&#xD53D;&#xC2A4;&#xCCD0;</h4>
+<ul>
+<li><p>&#xD53D;&#xC2A4;&#xCCD0; : &#xD14C;&#xC2A4;&#xD2B8;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xB370;&#xC774;&#xD130;&#xC640; &#xAC1D;&#xCCB4;</p>
+</li>
+<li><p>&#xD14C;&#xC2A4;&#xD2B8;&#xB9C8;&#xB2E4; &#xACB9;&#xCE58;&#xB294; &#xD53D;&#xC2A4;&#xCCD0; &#xC0AC;&#xC6A9; &#xC2DC;, &#xC720;&#xD6A8;&#xBC94;&#xC704;&#xB97C; &#xC62E;&#xACA8; &#xD14C;&#xC2A4;&#xD2B8;&#xB07C;&#xB9AC; &#xC0C1;&#xD638;&#xC791;&#xC6A9;&#xD558;&#xB294; &#xACF5;&#xC720; &#xD53D;&#xC2A4;&#xCCD0;&#xAC00; &#xC544;&#xB2CC; &#xAC01; &#xD14C;&#xC2A4;&#xD2B8;&#xB9C8;&#xB2E4; &#xC0C8;&#xB85C; &#xC124;&#xC815;&#xB418;&#xB294; beforeEach&#xBB38;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</li>
+<li><p><strong>&#xD53D;&#xC2A4;&#xCCD0;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC774;&#xC720;</strong></p>
+<p>&#xBAA8;&#xB4E0; &#xD14C;&#xC2A4;&#xD2B8;&#xAC00; &#xB611;&#xAC19;&#xC740; &#xD53D;&#xC2A4;&#xCCD0;&#xC5D0; &#xAE30;&#xCD08;&#xD558;&#xC5EC; &#xAC80;&#xC99D;&#xC744; &#xC218;&#xD589;&#xD558;&#xAE30;&#xB97C; &#xBCF4;&#xC7A5;&#xD558;&#xC5EC; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xC18D;&#xC131;&#xC744; &#xB2E4;&#xC591;&#xD558;&#xAC8C; &#xBC1C;&#xAD74;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. </p>
+<p>beforeEach&#xBB38;&#xC740; &#xD14C;&#xC2A4;&#xD2B8;&#xC5D0; &#xAE30;&#xCD08;&#xAC00; &#xB418;&#xB294; &#xD53D;&#xC2A4;&#xCCD0;(&#xC774;&#xD558; &#xD45C;&#xC900; &#xD53D;&#xC2A4;&#xCCD0;)&#xB97C; &#xC0AC;&#xC6A9;&#xD568;&#xC744; &#xBA85;&#xC2DC;&#xD558;&#xB294; &#xC5ED;&#xD560;&#xC744; &#xD558;&#xAE30;&#xB3C4; &#xD569;&#xB2C8;&#xB2E4;. </p>
+<p>&#xB3D9;&#xB8CC; &#xAC1C;&#xBC1C;&#xC790;&#xB4E4;&#xC774; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB97C; &#xC77D;&#xC744; &#xB54C; describe&#xBB38;&#xC758; &#xBAA8;&#xB4E0; &#xD14C;&#xC2A4;&#xD2B8;&#xAC00; &#xB611;&#xAC19;&#xC740; &#xD45C;&#xC900; &#xD53D;&#xC2A4;&#xCCD0;&#xB85C;&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD568;&#xC744; &#xC27D;&#xAC8C; &#xC778;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</li>
+</ul>
+<h4 id="&#xD14C;&#xC2A4;&#xD2B8;-&#xD328;&#xD134;">&#xD14C;&#xC2A4;&#xD2B8; &#xD328;&#xD134;</h4>
+<ul>
+<li><p>given-when-expect (setup-exercise-verify, arrange-act-assert)</p>
+</li>
+<li><p>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xD558;&#xB098;&#xC758; &#xD14C;&#xC2A4;&#xD2B8;&#xC5D0; &#xD55C; &#xAC1C;&#xC758; expect(&#xAC80;&#xC99D;)&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;</p>
+</li>
+</ul>
+<h4 id="&#xD14C;&#xC2A4;&#xD2B8;-&#xCF54;&#xB4DC;-&#xC791;&#xC131;-&#xC2DC;-&#xC720;&#xC758;&#xD560;-&#xC810;">&#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC; &#xC791;&#xC131; &#xC2DC; &#xC720;&#xC758;&#xD560; &#xC810;</h4>
+<ul>
+<li>&#xC131;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC791;&#xC131;&#xD558;&#xB294; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB294; &#xC758;&#xBBF8;&#xC5C6;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC2E4;&#xD328;&#xD574;&#xC57C; &#xD560; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;&#xB294; &#xBC18;&#xB4DC;&#xC2DC; &#xC2E4;&#xD328;&#xD558;&#xAC8C; &#xC791;&#xC131;&#xD569;&#xB2C8;&#xB2E4;.<ul>
+<li>&#xC77C;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC624;&#xB958;&#xB97C; &#xC8FC;&#xC785;&#xD574;&#xBD05;&#xB2C8;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xC801;&#xC5B4;&#xB3C4; &#xD558;&#xB8E8;&#xC5D0; &#xD55C; &#xBC88; &#xC804;&#xCCB4; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xB3CC;&#xB9AC;&#xACE0;, &#xC791;&#xC131;&#xC911;&#xC778; &#xCF54;&#xB4DC;&#xB294; &#xCD5C;&#xC18C;&#xD55C; &#xBA87; &#xBD84; &#xAC04;&#xACA9;&#xC73C;&#xB85C; &#xD14C;&#xC2A4;&#xD2B8;&#xD560; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.<ul>
+<li>&#xCD94;&#xAC00;&#xD55C; &#xCF54;&#xB4DC;&#xC5D0; &#xBB38;&#xC81C;&#xB294; &#xC5C6;&#xB294;&#xC9C0;</li>
+<li>&#xB9AC;&#xD329;&#xD130;&#xB9C1;&#xD558;&#xBA74;&#xC11C; &#xC2E4;&#xC218;&#xD55C; &#xAC83;&#xC740; &#xC5C6;&#xB294;&#xC9C0;</li>
+</ul>
+</li>
+<li>&#xC758;&#xC2DD;&#xC801;&#xC73C;&#xB85C; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xB9DD;&#xAC00;&#xB728;&#xB9AC;&#xB294; &#xACBD;&#xACC4; &#xC870;&#xAC74;(&#xBB38;&#xC81C;&#xAC00; &#xC0DD;&#xAE38; &#xC218; &#xC788;&#xB294; &#xC870;&#xAC74;&#xB4E4;)&#xC744; &#xC0DD;&#xAC01;&#xD574;&#xBCF4;&#xACE0; &#xC9D1;&#xC911; &#xD14C;&#xC2A4;&#xD2B8;&#xD574;&#xBD05;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD14C;&#xC2A4;&#xD2B8;&#xB294; &#xC5B4;&#xB290; &#xC218;&#xC900;&#xAE4C;&#xC9C0; &#xC791;&#xC131;? &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC704;&#xD5D8;&#xD55C; &#xBD80;&#xBD84;, &#xC989; &#xC624;&#xB958;&#xAC00; &#xC0DD;&#xAE38; &#xC218; &#xC788;&#xB294; &#xBD80;&#xBD84;&#xC5D0; &#xC9D1;&#xC911;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD14C;&#xC2A4;&#xD2B8;&#xB294; &#xD55C;&#xBC88; &#xC791;&#xC131;&#xD558;&#xACE0; &#xC644;&#xC131;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xAE30;&#xB2A5;&#xCD94;&#xAC00;&#xC640; &#xB9AC;&#xD329;&#xD130;&#xB9C1;&#xC744; &#xD558;&#xB294; &#xC640;&#xC911;&#xC5D0;&#xB3C4; &#xC9C0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xBCF4;&#xAC15;&#xD569;&#xB2C8;&#xB2E4;. 
+&#xC2E0;&#xADDC; &#xAE30;&#xB2A5; &#xCD94;&#xAC00;&#xC5D0; &#xB530;&#xB978; &#xC2E0;&#xADDC; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC; &#xC791;&#xC131; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xAE30;&#xC874;&#xC5D0; &#xC791;&#xC131;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xAC00; &#xBA85;&#xD655;&#xD55C;&#xC9C0;, &#xB354; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC27D;&#xAC8C; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xBC84;&#xADF8;&#xB97C; &#xBC1C;&#xACAC;&#xD558;&#xB294; &#xC989;&#xC2DC; &#xADF8; &#xBC84;&#xADF8;&#xB97C; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xB294; &#xD14C;&#xC2A4;&#xD2B8;&#xCF54;&#xB4DC;&#xB3C4; &#xD568;&#xAED8; &#xC791;&#xC131;&#xD558;&#xB294; &#xC2B5;&#xAD00;&#xC744; &#xAE30;&#xB985;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<blockquote>
+<p>&#xBC84;&#xADF8; &#xB9AC;&#xD3EC;&#xD2B8;&#xB97C; &#xBC1B;&#xC73C;&#xBA74; &#xAC00;&#xC7A5; &#xBA3C;&#xC800; &#xADF8; &#xBC84;&#xADF8;&#xB97C; &#xB4DC;&#xB7EC;&#xB0B4;&#xB294; &#xB2E8;&#xC704; &#xD14C;&#xC2A4;&#xD2B8;&#xBD80;&#xD130; &#xC791;&#xC131;&#xD558;&#xC790;.</p>
+</blockquote>
+<ul>
+<li>&#xD14C;&#xC2A4;&#xD2B8;&#xC758; &#xD488;&#xC9C8;&#xC740; &#xC5B4;&#xB5BB;&#xAC8C; &#xC54C; &#xC218; &#xC788;&#xC744;&#xAE4C;? &#xAE30;&#xC900;&#xC774; &#xB9E4;&#xC6B0; &#xC8FC;&#xAD00;&#xC801;&#xC774;&#xC9C0;&#xB9CC; &#xC911;&#xC694;&#xD55C; &#xAC83;&#xC740; &#xC6B0;&#xB9AC;&#xAC00; &#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xADF8; &#xAE30;&#xC900;&#xC5D0; &#xB300;&#xD55C; &#xBBFF;&#xC74C;&#xC744; &#xAC16;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xD14C;&#xC2A4;&#xD2B8; &#xACB0;&#xACFC;&#xAC00; &#xBAA8;&#xB450; &#xC131;&#xACF5;&#xC774;&#xB77C;&#xBA74; &#xB9AC;&#xD329;&#xD130;&#xB9C1; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xBC84;&#xADF8;&#xAC00; &#xC5C6;&#xB2E4;&#xACE0; &#xD655;&#xC2E0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Chapter 03 - 코드에서 나는 악취/" class="navigation navigation-prev " aria-label="Previous page: Chapter 03">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Chapter 06 - 기본적인 리팩터링/" class="navigation navigation-next " aria-label="Next page: Chapter 06">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 04","level":"2.4","depth":1,"next":{"title":"Chapter 06","level":"2.5","depth":1,"path":"Chapter 06 - 기본적인 리팩터링/README.md","ref":"Chapter 06 - 기본적인 리팩터링/README.md","articles":[{"title":"6-1. 함수 추출하기","level":"2.5.1","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-1.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-1.md","articles":[]},{"title":"6-2. 함수 인라인하기","level":"2.5.2","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","articles":[]},{"title":"6-3. 변수 추출하기","level":"2.5.3","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","articles":[]},{"title":"6-4. 변수 인라인하기","level":"2.5.4","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","articles":[]},{"title":"6-5. 함수 선언 바꾸기","level":"2.5.5","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-5.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-5.md","articles":[]},{"title":"6-6. 변수 캡슐화하기","level":"2.5.6","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-6.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-6.md","articles":[]},{"title":"6-7. 변수 이름 바꾸기","level":"2.5.7","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-7.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-7.md","articles":[]},{"title":"6-8. 매개변수 객체 만들기","level":"2.5.8","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-8.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-8.md","articles":[]},{"title":"6-9. 여러 함수를 클래스로 묶기","level":"2.5.9","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-9.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-9.md","articles":[]},{"title":"6-10. 여러 함수를 변환 함수로 묶기","level":"2.5.10","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-10.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-10.md","articles":[]},{"title":"6-11. 단계 쪼개기","level":"2.5.11","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-11.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-11.md","articles":[]}]},"previous":{"title":"Chapter 03","level":"2.3","depth":1,"path":"Chapter 03 - 코드에서 나는 악취/README.md","ref":"Chapter 03 - 코드에서 나는 악취/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter 04 - 테스트 구축하기/README.md","mtime":"2021-01-28T07:33:35.797Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-28T08:56:19.789Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
