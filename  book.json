@@ -1,7 +1,17 @@
 {
+    "title": "리팩터링 2판 스터디",
+    "author": "파이낸셜FE",
     "plugins": [
-        "toggle-chapters",
-        "expandable-chapters-small"
+      "toggle-chapters",
+      "expandable-chapters-small"
     ],
+    "pluginsConfig": {
+      "sitemap": {
+        "hostname": "https://oss.navercorp.com/yujeong-jeon"
+      }
+    },
+    "structure": {
+      "readme": "README.md"
+    },
     "language": "ko"
-}
+  }
