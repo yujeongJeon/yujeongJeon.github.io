@@ -571,6 +571,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="3-&#xBCC0;&#xC218;-&#xCD94;&#xCD9C;&#xD558;&#xAE30;">3. &#xBCC0;&#xC218; &#xCD94;&#xCD9C;&#xD558;&#xAE30;</h2>
+<p><a href="6-4.html">&#xBCC0;&#xC218; &#xC778;&#xB77C;&#xC778;&#xD558;&#xAE30;(6.4)&#xACFC; &#xBC18;&#xB300;</a></p>
 <ul>
 <li>&#xBCF5;&#xC7A1;&#xD55C; &#xB85C;&#xC9C1;&#xC744; &#xAD6C;&#xC131;&#xD558;&#xB294; &#xB2E8;&#xACC4;&#xB9C8;&#xB2E4; &#xBCC0;&#xC218;&#xB85C; &#xC774;&#xB984; &#xBD99;&#xC774;&#xAE30;</li>
 <li>&#xB514;&#xBC84;&#xAE45; &#xC2DC; break point &#xC124;&#xC815; &#xC6A9;&#xC774;</li>
@@ -584,48 +585,50 @@
 <li>&#xC0C8;&#xB85C; &#xB9CC;&#xB4E0; &#xBCC0;&#xC218;&#xB85C; &#xAD50;&#xCCB4;                                         </li>
 </ol>
 <hr>
-<h3 id="&#xAC1C;&#xC694;-&#xCF54;&#xB4DC;">&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</h3>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> pad2digit = digit =&gt; digit.length &gt;= <span class="hljs-number">2</span> ? digit : <span class="hljs-string">`0<span class="hljs-subst">${digit}</span>`</span>
+<h3 id="&#xC608;&#xC2DC;-&#xCF54;&#xB4DC;-1&#xFE0F;&#x20E3;">&#xC608;&#xC2DC; &#xCF54;&#xB4DC; 1&#xFE0F;&#x20E3;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> pad2digit = digit =&gt; digit.length &gt;= <span class="hljs-number">2</span> ? digit : <span class="hljs-string">`0<span class="hljs-subst">${digit}</span>`</span>
+</code></pre>
+<h4 id="&#x1F61E;-before">&#x1F61E; Before</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> timerFormat = value =&gt; <span class="hljs-string">`<span class="hljs-subst">${pad2digit(`${parseInt(value / 60)}</span>`</span>)}:${pad2digit(<span class="hljs-string">`<span class="hljs-subst">${value % 60}</span>`</span>)}<span class="hljs-string">`
+</span></code></pre>
+<h4 id="&#x1F603;-after">&#x1F603; After</h4>
+<pre><code class="lang-js"><span class="hljs-comment">// :)</span>
+<span class="hljs-keyword">const</span> timerFormat = value =&gt; {
+    <span class="hljs-keyword">const</span> _minutes = <span class="hljs-built_in">parseInt</span>(value / <span class="hljs-number">60</span>)
+    <span class="hljs-keyword">const</span> minutes = pad2digit(<span class="hljs-string">`<span class="hljs-subst">${_minutes}</span>`</span>)
+    <span class="hljs-keyword">const</span> seconds = pad2digit(<span class="hljs-string">`<span class="hljs-subst">${value % 60}</span>`</span>)
 
-<span class="hljs-comment">// :(</span>
-<span class="hljs-keyword">const</span> timerFormat = value =&gt; <span class="hljs-string">`<span class="hljs-subst">${pad2digit(`${parseInt(value / 60)}</span>`</span>)}:${pad2digit(<span class="hljs-string">`<span class="hljs-subst">${value % 60}</span>`</span>)}<span class="hljs-string">`
-
-// :)
-const timerFormat = value =&gt; {
-    const _minutes = parseInt(value / 60)
-    const minutes = pad2digit(`</span>${_minutes}<span class="hljs-string">`)
-    const seconds = pad2digit(`</span>${value % <span class="hljs-number">60</span>}<span class="hljs-string">`)
-
-    return `</span>${minutes}:${seconds}<span class="hljs-string">`
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${minutes}</span>:<span class="hljs-subst">${seconds}</span>`</span>
 }
-
-// :(
-const showExitAlert = useCallback(() =&gt; {
-    const exitAlertCode = step === &apos;4&apos; ? SME_ALERT_CODE.EXIT.SAVE : SME_ALERT_CODE.EXIT.NOT_SAVE
+</code></pre>
+<h3 id="&#xC608;&#xC2DC;-&#xCF54;&#xB4DC;-2&#xFE0F;&#x20E3;">&#xC608;&#xC2DC; &#xCF54;&#xB4DC; 2&#xFE0F;&#x20E3;</h3>
+<h4 id="&#x1F61E;-before">&#x1F61E; Before</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> showExitAlert = useCallback(() =&gt; {
+    <span class="hljs-keyword">const</span> exitAlertCode = step === <span class="hljs-string">&apos;4&apos;</span> ? SME_ALERT_CODE.EXIT.SAVE : SME_ALERT_CODE.EXIT.NOT_SAVE
     showAlert(exitAlertCode)
 }, [showAlert, step])
 
-const isValidReferer = useCallback(() =&gt; {
-    switch (step) {
-        case &apos;4&apos;:
-            return isSurlEnter(query)
-        default:
-            return isHomeEnter
+<span class="hljs-keyword">const</span> isValidReferer = useCallback(() =&gt; {
+    <span class="hljs-keyword">switch</span> (step) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;4&apos;</span>:
+            <span class="hljs-keyword">return</span> isSurlEnter(query)
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-keyword">return</span> isHomeEnter
     }
 }, [isHomeEnter, isSurlEnter, step, query])
+</code></pre>
+<h4 id="&#x1F603;-after">&#x1F603; After</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> lastStep = step === <span class="hljs-string">&apos;4&apos;</span>
 
-// :)
-const lastStep = step === &apos;4&apos;
-
-const showExitAlert = () =&gt; {
-    const exitAlertCode = lastStep ? SME_ALERT_CODE.EXIT.SAVE : SME_ALERT_CODE.EXIT.NOT_SAVE
+<span class="hljs-keyword">const</span> showExitAlert = () =&gt; {
+    <span class="hljs-keyword">const</span> exitAlertCode = lastStep ? SME_ALERT_CODE.EXIT.SAVE : SME_ALERT_CODE.EXIT.NOT_SAVE
     showAlert(exitAlertCode)
 }
 
-const isValidReferer = () =&gt; {
-    return lastStep ? isSurlEnter(query) : isHomeEnter
+<span class="hljs-keyword">const</span> isValidReferer = () =&gt; {
+    <span class="hljs-keyword">return</span> lastStep ? isSurlEnter(query) : isHomeEnter
 }
-</span></code></pre>
+</code></pre>
 
                                 
                                 </section>
@@ -669,7 +672,7 @@ const isValidReferer = () =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6-3. 변수 추출하기","level":"2.5.3","depth":2,"next":{"title":"6-4. 변수 인라인하기","level":"2.5.4","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","articles":[]},"previous":{"title":"6-2. 함수 인라인하기","level":"2.5.2","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://oss.navercorp.com/yujeong-jeon"},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"파이낸셜FE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"리팩터링 2판 스터디","language":"ko","gitbook":"*"},"file":{"path":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","mtime":"2021-01-29T05:23:30.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T05:32:22.801Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6-3. 변수 추출하기","level":"2.5.3","depth":2,"next":{"title":"6-4. 변수 인라인하기","level":"2.5.4","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","articles":[]},"previous":{"title":"6-2. 함수 인라인하기","level":"2.5.2","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://oss.navercorp.com/yujeong-jeon"},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"파이낸셜FE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"리팩터링 2판 스터디","language":"ko","gitbook":"*"},"file":{"path":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","mtime":"2021-01-29T05:59:36.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T05:59:41.956Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

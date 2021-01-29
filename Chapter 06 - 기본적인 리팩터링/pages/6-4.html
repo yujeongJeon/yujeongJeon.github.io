@@ -571,6 +571,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="4-&#xBCC0;&#xC218;-&#xC778;&#xB77C;&#xC778;&#xD558;&#xAE30;">4. &#xBCC0;&#xC218; &#xC778;&#xB77C;&#xC778;&#xD558;&#xAE30;</h2>
+<p><a href="6-3.html">&#xBCC0;&#xC218; &#xCD94;&#xCD9C;&#xD558;&#xAE30;(6.3)&#xACFC; &#xBC18;&#xB300;</a></p>
 <ul>
 <li>&#xBCC0;&#xC218;&#xBA85;&#xC774; &#xC6D0;&#xB798; &#xD45C;&#xD604;&#xC2DD;&#xACFC; &#xB2E4;&#xB97C;&#xBC14; &#xC5C6;&#xC744; &#xB54C;</li>
 </ul>
@@ -583,13 +584,13 @@
 <li>&#xBCC0;&#xC218;&#xB97C; &#xD45C;&#xD604;&#xC2DD;&#xC73C;&#xB85C; &#xAD50;&#xCCB4;</li>
 </ol>
 <hr>
-<h3 id="&#xAC1C;&#xC694;-&#xCF54;&#xB4DC;">&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</h3>
-<pre><code class="lang-javascript"><span class="hljs-comment">// :(</span>
-<span class="hljs-keyword">const</span> isEnd = next &gt; <span class="hljs-number">-1</span>;
+<h3 id="&#xC608;&#xC2DC;-&#xCF54;&#xB4DC;">&#xC608;&#xC2DC; &#xCF54;&#xB4DC;</h3>
+<h4 id="&#x1F61E;-before">&#x1F61E; Before</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> isEnd = next &gt; <span class="hljs-number">-1</span>;
 <span class="hljs-keyword">return</span> isEnd;
-
-<span class="hljs-comment">// :)</span>
-<span class="hljs-keyword">return</span> next &gt; <span class="hljs-number">-1</span>;
+</code></pre>
+<h4 id="&#x1F603;-after">&#x1F603; After</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">return</span> next &gt; <span class="hljs-number">-1</span>;
 </code></pre>
 
                                 
@@ -634,7 +635,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6-4. 변수 인라인하기","level":"2.5.4","depth":2,"next":{"title":"6-5. 함수 선언 바꾸기","level":"2.5.5","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-5.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-5.md","articles":[]},"previous":{"title":"6-3. 변수 추출하기","level":"2.5.3","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://oss.navercorp.com/yujeong-jeon"},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"파이낸셜FE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"리팩터링 2판 스터디","language":"ko","gitbook":"*"},"file":{"path":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","mtime":"2021-01-29T05:23:30.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T05:32:22.801Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6-4. 변수 인라인하기","level":"2.5.4","depth":2,"next":{"title":"6-5. 함수 선언 바꾸기","level":"2.5.5","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-5.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-5.md","articles":[]},"previous":{"title":"6-3. 변수 추출하기","level":"2.5.3","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://oss.navercorp.com/yujeong-jeon"},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"파이낸셜FE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"리팩터링 2판 스터디","language":"ko","gitbook":"*"},"file":{"path":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","mtime":"2021-01-29T05:59:36.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T05:59:41.956Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
