@@ -23,6 +23,15 @@
     * [6-10. 여러 함수를 변환 함수로 묶기](Chapter 06 - 기본적인 리팩터링/pages/6-10.md)
     * [6-11. 단계 쪼개기](Chapter 06 - 기본적인 리팩터링/pages/6-11.md)
 * [Chapter 07. 캡슐화](Chapter 07 - 캡슐화/README.md)
+    * [7-1. 레코드 캡슐화하기](Chapter 07 - 캡슐화/pages/7-1.md)
+    * [7-2. 컬렉션 캡슐화하기](Chapter 07 - 캡슐화/pages/7-2.md)
+    * [7-3. 기본형을 객체로 바꾸기](Chapter 07 - 캡슐화/pages/7-3.md)
+    * [7-4. 임시 변수를 질의 함수로 바꾸기](Chapter 07 - 캡슐화/pages/7-4.md)
+    * [7-5. 클래스 추출하기](Chapter 07 - 캡슐화/pages/7-5.md)
+    * [7-6. 클래스 인라인하기](Chapter 07 - 캡슐화/pages/7-6.md)
+    * [7-7. 위임 숨기기](Chapter 07 - 캡슐화/pages/7-7.md)
+    * [7-8. 중개자 제거하기](Chapter 07 - 캡슐화/pages/7-8.md)
+    * [7-9. 알고리즘 교체하기](Chapter 07 - 캡슐화/pages/7-9.md)
 * [Chapter 08. 기능 이동](Chapter 08 - 기능 이동/README.md)
 
 ----
