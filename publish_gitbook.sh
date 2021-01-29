@@ -1,7 +1,7 @@
 # gitbook 의존 파일을 설치하고 gitbook 빌드를 돌린다.
 gitbook install && gitbook build
 
-# github pages가 바라보는 gh-pages 브랜치로 이동한다.
+# github pages가 바라보는 gh-pages 브랜치를 만든다.
 git checkout gh-pages
 
 # 최신 gh-pages 브랜치 정보를 가져와 rebase를 진행한다.
@@ -17,10 +17,10 @@ git clean -fx _book
 # NOQA
 git add .
 
-# 변경사항을 커밋한다.
+# 커밋커밋!
 git commit -a -m "Update gitbook"
 
-# gh-pages 브랜치에 push한다.
+# gh-pages 브랜치에 PUSH!
 git push origin gh-pages
 
 # 다시 master 브랜치로 돌아온다.
