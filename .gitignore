@@ -1,2 +1,7 @@
 .idea
 .DS_Store
+
+# Book build output
+_book
+
+node_modules
