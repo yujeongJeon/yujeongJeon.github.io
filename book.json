@@ -13,5 +13,8 @@
     "structure": {
       "readme": "README.md"
     },
-    "language": "ko"
+    "language": "ko",
+    "variables": {
+      "BASE_URL": "https://refactoring.gitbook.com"
+    }
   }
