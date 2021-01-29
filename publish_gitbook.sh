@@ -11,6 +11,7 @@ git pull myorigin gh-pages --rebase
 cp -R _book/* .
 
 # node_modules폴더와 _book폴더를 지워준다.
+git clean -fx node_modules
 git clean -fx _book
 
 # NOQA

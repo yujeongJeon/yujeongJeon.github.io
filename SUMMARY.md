@@ -1,9 +1,8 @@
-# 목차
+# Summary
 
 * [스터디 소개](README.md)
 
-### Chapters
-
+## Chapters
 * [Chapter 01. 리팩터링 첫 번째 예시](Chapter 01 - 리팩터링 첫 번째 예시/README.md)
 * [Chapter 02. 리팩터링 원칙](Chapter 02 - 리팩터링 원칙/README.md)
 * [Chapter 03. 코드에서 나는 악취](Chapter 03 - 코드에서 나는 악취/README.md)
@@ -34,4 +33,3 @@
     * [7-9. 알고리즘 교체하기](Chapter 07 - 캡슐화/pages/7-9.md)
 * [Chapter 08. 기능 이동](Chapter 08 - 기능 이동/README.md)
 
-----
