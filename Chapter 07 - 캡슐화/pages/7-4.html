@@ -1,0 +1,722 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7-4. 임시 변수를 질의 함수로 바꾸기 · 리팩터링 2판 스터디</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="파이낸셜FE">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="7-5.html" />
+    
+    
+    <link rel="prev" href="7-3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    스터디 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Chapters</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../Chapter 01 - 리팩터링 첫 번째 예시/">
+            
+                <a href="../../Chapter 01 - 리팩터링 첫 번째 예시/">
+            
+                    
+                    Chapter 01. 리팩터링 첫 번째 예시
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Chapter 02 - 리팩터링 원칙/">
+            
+                <a href="../../Chapter 02 - 리팩터링 원칙/">
+            
+                    
+                    Chapter 02. 리팩터링 원칙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../Chapter 03 - 코드에서 나는 악취/">
+            
+                <a href="../../Chapter 03 - 코드에서 나는 악취/">
+            
+                    
+                    Chapter 03. 코드에서 나는 악취
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../Chapter 04 - 테스트 구축하기/">
+            
+                <a href="../../Chapter 04 - 테스트 구축하기/">
+            
+                    
+                    Chapter 04. 테스트 구축하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../Chapter 04 - 테스트 구축하기/pages/previous.html">
+            
+                <a href="../../Chapter 04 - 테스트 구축하기/pages/previous.html">
+            
+                    
+                    4-1. 개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../Chapter 04 - 테스트 구축하기/pages/test_code.html">
+            
+                <a href="../../Chapter 04 - 테스트 구축하기/pages/test_code.html">
+            
+                    
+                    4-2. 예시
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../Chapter 06 - 기본적인 리팩터링/">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/">
+            
+                    
+                    Chapter 06. 기본적인 리팩터링
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-1.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-1.html">
+            
+                    
+                    6-1. 함수 추출하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-2.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-2.html">
+            
+                    
+                    6-2. 함수 인라인하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-3.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-3.html">
+            
+                    
+                    6-3. 변수 추출하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-4.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-4.html">
+            
+                    
+                    6-4. 변수 인라인하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-5.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-5.html">
+            
+                    
+                    6-5. 함수 선언 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-6.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-6.html">
+            
+                    
+                    6-6. 변수 캡슐화하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-7.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-7.html">
+            
+                    
+                    6-7. 변수 이름 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-8.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-8.html">
+            
+                    
+                    6-8. 매개변수 객체 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-9.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-9.html">
+            
+                    
+                    6-9. 여러 함수를 클래스로 묶기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-10.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-10.html">
+            
+                    
+                    6-10. 여러 함수를 변환 함수로 묶기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../../Chapter 06 - 기본적인 리팩터링/pages/6-11.html">
+            
+                <a href="../../Chapter 06 - 기본적인 리팩터링/pages/6-11.html">
+            
+                    
+                    6-11. 단계 쪼개기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Chapter 07. 캡슐화
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="7-1.html">
+            
+                <a href="7-1.html">
+            
+                    
+                    7-1. 레코드 캡슐화하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="7-2.html">
+            
+                <a href="7-2.html">
+            
+                    
+                    7-2. 컬렉션 캡슐화하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="7-3.html">
+            
+                <a href="7-3.html">
+            
+                    
+                    7-3. 기본형을 객체로 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6.4" data-path="7-4.html">
+            
+                <a href="7-4.html">
+            
+                    
+                    7-4. 임시 변수를 질의 함수로 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="7-5.html">
+            
+                <a href="7-5.html">
+            
+                    
+                    7-5. 클래스 추출하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="7-6.html">
+            
+                <a href="7-6.html">
+            
+                    
+                    7-6. 클래스 인라인하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="7-7.html">
+            
+                <a href="7-7.html">
+            
+                    
+                    7-7. 위임 숨기기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="7-8.html">
+            
+                <a href="7-8.html">
+            
+                    
+                    7-8. 중개자 제거하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="7-9.html">
+            
+                <a href="7-9.html">
+            
+                    
+                    7-9. 알고리즘 교체하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="discussion.html">
+            
+                <a href="discussion.html">
+            
+                    
+                    논의사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../Chapter 08 - 기능 이동/">
+            
+                <a href="../../Chapter 08 - 기능 이동/">
+            
+                    
+                    Chapter 08. 기능 이동
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >7-4. 임시 변수를 질의 함수로 바꾸기</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="4-&#xC784;&#xC2DC;-&#xBCC0;&#xC218;&#xB97C;-&#xC9C8;&#xC758;-&#xD568;&#xC218;&#xB85C;-&#xBC14;&#xAFB8;&#xAE30;">4. &#xC784;&#xC2DC; &#xBCC0;&#xC218;&#xB97C; &#xC9C8;&#xC758; &#xD568;&#xC218;&#xB85C; &#xBC14;&#xAFB8;&#xAE30;</h2>
+<ul>
+<li>&#xBE44;&#xC988;&#xB2C8;&#xC2A4; &#xB85C;&#xC9C1;&#xC5D0; &#xC788;&#xB294; &#xACC4;&#xC0B0;&#xB41C; &#xC784;&#xC2DC; &#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xAC70;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xACC4;&#xC0B0;&#xB41C; &#xC784;&#xC2DC; &#xBCC0;&#xC218;&#xB294; &#xD568;&#xC218;&#xB85C; &#xCEA1;&#xC290;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h3 id="&#xC608;&#xC2DC;-&#xCF54;&#xB4DC;">&#xC608;&#xC2DC; &#xCF54;&#xB4DC;</h3>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Status</span> </span>{
+    lockFrontDoor() {
+    <span class="hljs-keyword">this</span>.front = <span class="hljs-literal">true</span>
+    }
+
+    unlockFrontDoor() {
+    <span class="hljs-keyword">this</span>.front = <span class="hljs-literal">false</span>
+    }
+
+    lockRearDoor() {
+    <span class="hljs-keyword">this</span>.rear = <span class="hljs-literal">true</span>
+    }
+
+    unlockRearDoor() {
+    <span class="hljs-keyword">this</span>.rear = <span class="hljs-literal">false</span>
+    }
+
+    get frontDoorStatus() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.front
+    }
+
+    get rearDoorStatus() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.rear
+    }
+}
+
+<span class="hljs-keyword">const</span> myDoorStatus = <span class="hljs-keyword">new</span> Status()
+
+myDoorStatus.lockFrontDoor()
+myDoorStatus.lockRearDoor()
+myDoorStatus.unlockRearDoor()
+
+<span class="hljs-keyword">if</span> (myDoorStatus.frontDoorStatus &amp;&amp; myDoorStatus.rearDoorStatus) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Safe!&apos;</span>)
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Unsafe!&apos;</span>)
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Status</span> </span>{
+    <span class="hljs-comment">// {...}</span>
+
+    get isSafe() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.frontDoorStatus &amp;&amp; <span class="hljs-keyword">this</span>.rearDoorStatus
+    }
+}
+
+<span class="hljs-keyword">const</span> myDoorStatus = <span class="hljs-keyword">new</span> Status()
+
+<span class="hljs-comment">// {...}</span>
+
+<span class="hljs-keyword">if</span> (myDoorStatus.isSafe) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Safe!&apos;</span>)
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Unsafe!&apos;</span>)
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="7-3.html" class="navigation navigation-prev " aria-label="Previous page: 7-3. 기본형을 객체로 바꾸기">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="7-5.html" class="navigation navigation-next " aria-label="Next page: 7-5. 클래스 추출하기">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7-4. 임시 변수를 질의 함수로 바꾸기","level":"2.6.4","depth":2,"next":{"title":"7-5. 클래스 추출하기","level":"2.6.5","depth":2,"path":"Chapter 07 - 캡슐화/pages/7-5.md","ref":"Chapter 07 - 캡슐화/pages/7-5.md","articles":[]},"previous":{"title":"7-3. 기본형을 객체로 바꾸기","level":"2.6.3","depth":2,"path":"Chapter 07 - 캡슐화/pages/7-3.md","ref":"Chapter 07 - 캡슐화/pages/7-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://oss.navercorp.com/yujeong-jeon"},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"파이낸셜FE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"리팩터링 2판 스터디","language":"ko","gitbook":"*"},"file":{"path":"Chapter 07 - 캡슐화/pages/7-4.md","mtime":"2021-01-29T05:23:30.914Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T05:32:22.801Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

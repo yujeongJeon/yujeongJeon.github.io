@@ -1,0 +1,1068 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 08. 기능 이동 · 리팩터링 2판 스터디</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="파이낸셜FE">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../Chapter 07 - 캡슐화/pages/discussion.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    스터디 소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Chapters</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Chapter 01 - 리팩터링 첫 번째 예시/">
+            
+                <a href="../Chapter 01 - 리팩터링 첫 번째 예시/">
+            
+                    
+                    Chapter 01. 리팩터링 첫 번째 예시
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../Chapter 02 - 리팩터링 원칙/">
+            
+                <a href="../Chapter 02 - 리팩터링 원칙/">
+            
+                    
+                    Chapter 02. 리팩터링 원칙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../Chapter 03 - 코드에서 나는 악취/">
+            
+                <a href="../Chapter 03 - 코드에서 나는 악취/">
+            
+                    
+                    Chapter 03. 코드에서 나는 악취
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Chapter 04 - 테스트 구축하기/">
+            
+                <a href="../Chapter 04 - 테스트 구축하기/">
+            
+                    
+                    Chapter 04. 테스트 구축하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Chapter 04 - 테스트 구축하기/pages/previous.html">
+            
+                <a href="../Chapter 04 - 테스트 구축하기/pages/previous.html">
+            
+                    
+                    4-1. 개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../Chapter 04 - 테스트 구축하기/pages/test_code.html">
+            
+                <a href="../Chapter 04 - 테스트 구축하기/pages/test_code.html">
+            
+                    
+                    4-2. 예시
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../Chapter 06 - 기본적인 리팩터링/">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/">
+            
+                    
+                    Chapter 06. 기본적인 리팩터링
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-1.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-1.html">
+            
+                    
+                    6-1. 함수 추출하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-2.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-2.html">
+            
+                    
+                    6-2. 함수 인라인하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-3.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-3.html">
+            
+                    
+                    6-3. 변수 추출하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-4.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-4.html">
+            
+                    
+                    6-4. 변수 인라인하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-5.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-5.html">
+            
+                    
+                    6-5. 함수 선언 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-6.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-6.html">
+            
+                    
+                    6-6. 변수 캡슐화하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-7.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-7.html">
+            
+                    
+                    6-7. 변수 이름 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-8.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-8.html">
+            
+                    
+                    6-8. 매개변수 객체 만들기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-9.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-9.html">
+            
+                    
+                    6-9. 여러 함수를 클래스로 묶기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-10.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-10.html">
+            
+                    
+                    6-10. 여러 함수를 변환 함수로 묶기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../Chapter 06 - 기본적인 리팩터링/pages/6-11.html">
+            
+                <a href="../Chapter 06 - 기본적인 리팩터링/pages/6-11.html">
+            
+                    
+                    6-11. 단계 쪼개기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../Chapter 07 - 캡슐화/">
+            
+                <a href="../Chapter 07 - 캡슐화/">
+            
+                    
+                    Chapter 07. 캡슐화
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../Chapter 07 - 캡슐화/pages/7-1.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-1.html">
+            
+                    
+                    7-1. 레코드 캡슐화하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../Chapter 07 - 캡슐화/pages/7-2.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-2.html">
+            
+                    
+                    7-2. 컬렉션 캡슐화하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../Chapter 07 - 캡슐화/pages/7-3.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-3.html">
+            
+                    
+                    7-3. 기본형을 객체로 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../Chapter 07 - 캡슐화/pages/7-4.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-4.html">
+            
+                    
+                    7-4. 임시 변수를 질의 함수로 바꾸기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../Chapter 07 - 캡슐화/pages/7-5.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-5.html">
+            
+                    
+                    7-5. 클래스 추출하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../Chapter 07 - 캡슐화/pages/7-6.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-6.html">
+            
+                    
+                    7-6. 클래스 인라인하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../Chapter 07 - 캡슐화/pages/7-7.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-7.html">
+            
+                    
+                    7-7. 위임 숨기기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../Chapter 07 - 캡슐화/pages/7-8.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-8.html">
+            
+                    
+                    7-8. 중개자 제거하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../Chapter 07 - 캡슐화/pages/7-9.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/7-9.html">
+            
+                    
+                    7-9. 알고리즘 교체하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../Chapter 07 - 캡슐화/pages/discussion.html">
+            
+                <a href="../Chapter 07 - 캡슐화/pages/discussion.html">
+            
+                    
+                    논의사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Chapter 08. 기능 이동
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 08. 기능 이동</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h5 id="chapter-08---&#xAE30;&#xB2A5;-&#xC774;&#xB3D9;">Chapter 08 - &#xAE30;&#xB2A5; &#xC774;&#xB3D9;</h5>
+<!-- 챕터 개요 -->
+<ol>
+<li><p>&#xD568;&#xC218; &#xC62E;&#xAE30;&#xAE30;</p>
+<blockquote>
+<p>&#xD568;&#xC218;&#xB97C; &#xD55C; &#xACF3;&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xACF3;&#xC73C;&#xB85C; &#xC774;&#xB3D9;<br>&#xB2E4;&#xC74C; &#xC5EC;&#xB7EC; &#xAC00;&#xC9C0; &#xD615;&#xD0DC;&#xB97C; &#xBCF4;&#xC77C; &#xC218; &#xC788;&#xC74C;</p>
+<ul>
+<li>inner &#xD568;&#xC218;&#xB97C; &#xCD5C;&#xC0C1;&#xC704;&#xB85C; &#xC774;&#xB3D9;</li>
+<li>A &#xD074;&#xB798;&#xC2A4;&#xC758; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; B &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xC774;&#xB3D9;</li>
+<li>A &#xBAA8;&#xB4C8;&#xC758; &#xD568;&#xC218;&#xB97C; B &#xBAA8;&#xB4C8;&#xB85C; &#xC774;&#xB3D9;</li>
+<li>&#xAE30;&#xD0C0;</li>
+</ul>
+</blockquote>
+<ul>
+<li>&#xD568;&#xC218;&#xAC00; &#xC790;&#xC2E0;&#xC774; &#xC18D;&#xD55C; &#xBAA8;&#xB4C8;&#xC758; &#xC694;&#xC18C;&#xB4E4;&#xBCF4;&#xB2E4; &#xB2E4;&#xB978; &#xBAA8;&#xB4C8;&#xC758; &#xC694;&#xC18C;&#xB4E4;&#xC744; &#xB354; &#xB9CE;&#xC774; &#xCC38;&#xC870;&#xD560; &#xB54C;</li>
+<li>&#xB2E4;&#xB978; &#xD568;&#xC218; &#xC548;&#xC5D0;&#xC11C; &#xB3C4;&#xC6B0;&#xBBF8; &#xC5ED;&#xD560;&#xB85C; &#xC815;&#xC758;&#xB41C; &#xD568;&#xC218; &#xC911; &#xB3C5;&#xB9BD;&#xC801;&#xC778; &#xAC00;&#xCE58;&#xAC00; &#xC788;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC788;&#xC744; &#xB54C;</li>
+</ul>
+<details>
+<summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
+
+```js
+// Before
+class Account {
+  get overdraftCharge() {
+    // ...
+  }
+}
+```
+
+```js
+// After
+class Account {
+  get overdraftCharge() {
+    return this.type.overdraftCharge()
+  }
+}
+
+class AccountType {
+  get overdraftCharge() {
+    // ...
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>&#xC808;&#xCC28;</summary>
+
+1. &#xC120;&#xD0DD;&#xD55C; &#xD568;&#xC218;&#xAC00; &#xD604;&#xC7AC; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xC911;&#xC778; &#xBAA8;&#xB4E0; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC694;&#xC18C;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF8;&#xB2E4;. &#xC774; &#xC694;&#xC18C;&#xB4E4; &#xC911;&#xC5D0;&#xB3C4; &#xD568;&#xAED8; &#xC62E;&#xACA8;&#xC57C; &#xD560; &#xAC8C; &#xC788;&#xB294;&#xC9C0; &#xACE0;&#xBBFC;&#xD574;&#xBCF8;&#xB2E4;.
+2. &#xC120;&#xD0DD;&#xD55C; &#xD568;&#xC218;&#xAC00; &#xB2E4;&#xD615; &#xBA54;&#xC11C;&#xB4DC;&#xC778;&#xC9C0; &#xD655;&#xC778;&#xD55C;&#xB2E4;.
+3. &#xC120;&#xD0DD;&#xD55C; &#xD568;&#xC218;&#xB97C; &#xD0C0;&#xAE43; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xB85C; &#xBCF5;&#xC0AC;&#xD55C;&#xB2E4;. &#xD0C0;&#xAE43; &#xD568;&#xC218;&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; &#xD130;&#xC804;&#xC5D0; &#xC798; &#xC790;&#xB9AC; &#xC7A1;&#xB3C4;&#xB85D; &#xB2E4;&#xB4EC;&#xB294;&#xB2E4;.
+4. &#xC815;&#xC801; &#xBD84;&#xC11D;&#xC744; &#xC218;&#xD589;&#xD55C;&#xB2E4;.
+5. &#xC18C;&#xC2A4; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0;&#xC11C; &#xD0C0;&#xAE43; &#xD568;&#xC218;&#xB97C; &#xCC38;&#xC870;&#xD560; &#xBC29;&#xBC95;&#xC744; &#xCC3E;&#xC544; &#xBC18;&#xC601;&#xD55C;&#xB2E4;.
+6. &#xC18C;&#xC2A4; &#xD568;&#xC218;&#xB97C; &#xD0C0;&#xAE43; &#xD568;&#xC218;&#xC758; &#xC704;&#xC784; &#xD568;&#xC218;&#xAC00; &#xB418;&#xB3C4;&#xB85D; &#xC218;&#xC815;&#xD55C;&#xB2E4;.
+7. &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;.
+8. &#xC18C;&#xC2A4; &#xD568;&#xC218;&#xB97C; &#xC778;&#xB77C;&#xC778;(6.2)&#xD560;&#xC9C0; &#xACE0;&#xBBFC;&#xD574;&#xBCF8;&#xB2E4;.
+</details>
+</li>
+<li><p>&#xD544;&#xB4DC; &#xC62E;&#xAE30;&#xAE30;</p>
+<blockquote>
+<p>&#xD544;&#xB4DC;&#xB97C; &#xD55C; &#xACF3;&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xACF3;&#xC73C;&#xB85C; &#xC774;&#xB3D9;<br>&#xC989;, &#xB370;&#xC774;&#xD130; &#xAD6C;&#xC870;&#xC758; &#xBCC0;&#xACBD;<br>&#xC544;&#xB798; &#xBAA9;&#xB85D;&#xC5D0;&#xC11C; &quot;&#xB808;&#xCF54;&#xB4DC;&quot;&#xB294; &quot;&#xD074;&#xB798;&#xC2A4;&quot;&#xB098; &quot;&#xAC1D;&#xCCB4;&quot;&#xB85C; &#xCE58;&#xD658; &#xAC00;&#xB2A5;</p>
+</blockquote>
+<ul>
+<li>&#xD568;&#xC218;&#xC5D0; &#xC5B4;&#xB5A4; &#xB808;&#xCF54;&#xB4DC;&#xB97C; &#xB118;&#xAE38; &#xB54C; &#xB9C8;&#xB2E4; &#xB610; &#xB2E4;&#xB978; &#xB808;&#xCF54;&#xB4DC;&#xC758; &#xD544;&#xB4DC;&#xB3C4; &#xD568;&#xAED8; &#xB118;&#xAE30;&#xACE0; &#xC788;&#xC744; &#xB54C;</li>
+<li>&#xD55C; &#xB808;&#xCF54;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294;&#xB370; &#xB2E4;&#xB978; &#xB808;&#xCF54;&#xB4DC;&#xC758; &#xD544;&#xB4DC;&#xAE4C;&#xC9C0; &#xBCC0;&#xACBD;&#xD574;&#xC57C; &#xD560; &#xB54C;</li>
+<li>&#xAD6C;&#xC870;&#xCCB4; &#xC5EC;&#xB7EC; &#xAC1C;&#xC5D0; &#xC815;&#xC758;&#xB41C; &#xB611;&#xAC19;&#xC740; &#xD544;&#xB4DC;&#xB4E4;&#xC744; &#xAC31;&#xC2E0;&#xD574;&#xC57C; &#xD560; &#xB54C;</li>
+</ul>
+<details>
+<summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
+
+```js
+// Before
+class Customer {
+    get plan() {
+        return this._plan;
+    }
+
+    get discountRate() {
+        returh this._discountRate
+    }
+}
+```
+
+```js
+// After
+class Customer {
+    get plan() {
+        return this._plan;
+    }
+
+    get discountRate() {
+        returh this.plan.discountRate
+    }
+}
+```
+
+</details>
+
+<details>
+<summary>&#xC808;&#xCC28;</summary>
+
+1. &#xC18C;&#xC2A4; &#xD544;&#xB4DC;&#xAC00; &#xCEA1;&#xC290;&#xD654;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; &#xCEA1;&#xC290;&#xD654;&#xD55C;&#xB2E4;.
+2. &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;.
+3. &#xD0C0;&#xAE43; &#xAC1D;&#xCCB4;&#xC5D0; &#xD544;&#xB4DC;(&#xC640; &#xC811;&#xADFC;&#xC790; &#xBA54;&#xC11C;&#xB4DC;&#xB4E4;)&#xC744; &#xC0DD;&#xC131;&#xD55C;&#xB2E4;.
+4. &#xC815;&#xC801; &#xAC80;&#xC0AC;&#xB97C; &#xC218;&#xD589;&#xD55C;&#xB2E4;.
+5. &#xC18C;&#xC2A4; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xD0C0;&#xAE43; &#xAC1D;&#xCCB4;&#xB97C; &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD55C;&#xB2E4;.
+6. &#xC811;&#xADFC;&#xC790;&#xB4E4;&#xC774; &#xD0C0;&#xAE43; &#xD544;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC218;&#xC815;&#xD55C;&#xB2E4;.
+7. &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;.
+8. &#xC18C;&#xC2A4; &#xD544;&#xB4DC;&#xB97C; &#xC81C;&#xAC70;&#xD55C;&#xB2E4;.
+9. &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;.
+</details>
+</li>
+<li><p>&#xBB38;&#xC7A5;(Statements)&#xC744; &#xD568;&#xC218;&#xB85C; &#xC62E;&#xAE30;&#xAE30;</p>
+<blockquote>
+<p>&#xD568;&#xC218;&#xC640; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBB38;&#xC7A5;&#xC744; &#xD568;&#xC218; &#xC548;&#xC73C;&#xB85C; &#xC774;&#xB3D9;
+&#xD53C;&#xD638;&#xCD9C; &#xD568;&#xC218;&#xC640; &#xD55C; &#xBAB8;&#xC740; &#xC544;&#xB2C8;&#xC9C0;&#xB9CC;, &#xC5EC;&#xC804;&#xD788; &#xD568;&#xAED8; &#xD638;&#xCD9C;&#xB3FC;&#xC57C; &#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB77C;&#xBA74; &#xB458;&#xC744; &#xD569;&#xCCD0; &#xBCC4;&#xAC1C;&#xC758; &#xD568;&#xC218;&#xB85C; &#xCD94;&#xCD9C;(6.1)&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB3C4; &#xAC00;&#xB2A5;</p>
+</blockquote>
+<ul>
+<li>&#xD2B9;&#xC815; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD560; &#xB54C; &#xB9C8;&#xB2E4; &#xADF8; &#xC55E;&#xC774;&#xB098; &#xB4A4;&#xC5D0;&#xC11C; &#xB611;&#xAC19;&#xC740; &#xBB38;&#xC7A5;&#xC774; &#xBC18;&#xBCF5;&#xB420; &#xB54C;</li>
+</ul>
+<details>
+<summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
+
+```js
+// Before
+result.push(`<p>&#xC81C;&#xBAA9;: ${person.photo.title}</p>`)
+result.concat(photoData(person.photo))
+
+function photoData(aPhoto) {
+  return [
+    `<p>&#xC704;&#xCE58;: ${aPhoto.location}</p>`,
+    `<p>&#xB0A0;&#xC9DC;: ${aPhoto.date.toDateString()}</p>`,
+    `<p>&#xD0DC;&#xADF8;: ${aPhoto.tag}</p>`,
+  ]
+}
+```
+
+```js
+// After
+result.concat(photoData(person.photo))
+
+function photoData(aPhoto) {
+  return [
+    `<p>&#xC81C;&#xBAA9;: ${aPhoto.title}</p>`,
+    `<p>&#xC704;&#xCE58;: ${aPhoto.location}</p>`,
+    `<p>&#xB0A0;&#xC9DC;: ${aPhoto.date.toDateString()}</p>`,
+    `<p>&#xD0DC;&#xADF8;: ${aPhoto.tag}</p>`,
+  ]
+}
+```
+
+</details>
+
+<details>
+<summary>&#xC808;&#xCC28;</summary>
+
+1. &#xBC18;&#xBCF5; &#xCF54;&#xB4DC;&#xAC00; &#xD568;&#xC218; &#xD638;&#xCD9C; &#xBD80;&#xBD84;&#xACFC; &#xBA40;&#xB9AC; &#xB5A8;&#xC5B4;&#xC838; &#xC788;&#xB2E4;&#xBA74; &#xBB38;&#xC7A5; &#xC2AC;&#xB77C;&#xC774;&#xC2A4;&#xD558;&#xAE30;(8.6)&#xB97C; &#xC801;&#xC6A9;&#xD574; &#xADFC;&#xCC98;&#xB85C; &#xC62E;&#xAE34;&#xB2E4;.
+2. &#xD0C0;&#xAE43; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xACF3;&#xC774; &#xD55C; &#xACF3;&#xBFD0;&#xC774;&#xBA74;, &#xB2E8;&#xC21C;&#xD788; &#xC18C;&#xC2A4; &#xC704;&#xCE58;&#xC5D0;&#xC11C; &#xD574;&#xB2F9; &#xCF54;&#xB4DC;&#xB97C; &#xC798;&#xB77C;&#xB0B4;&#xC5B4; &#xD53C;&#xD638;&#xCD9C; &#xD568;&#xC218;&#xB85C; &#xBCF5;&#xC0AC;&#xD558;&#xACE0; &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0;&#xD558;&#xBA74; &#xB098;&#xBA38;&#xC9C0; &#xB2E8;&#xACC4;&#xB294; &#xBB34;&#xC2DC;&#xD55C;&#xB2E4;.
+3. &#xD638;&#xCD9C;&#xC790;&#xAC00; &#xB458; &#xC774;&#xC0C1;&#xC774;&#xBA74; &#xD638;&#xCD9C;&#xC790; &#xC911; &#xD558;&#xB098;&#xC5D0;&#xC11C; &apos;&#xD0C0;&#xAE43; &#xD568;&#xC218; &#xD638;&#xCD9C; &#xBD80;&#xBD84;&#xACFC; &#xADF8; &#xD568;&#xC218;&#xB85C; &#xC62E;&#xAE30;&#xB824;&#xB294; &#xBB38;&#xC7A5;&#xB4F1;&#xC744; &#xD568;&#xAED8;&apos; &#xB2E4;&#xB978; &#xD568;&#xC218;&#xB85C; &#xCD94;&#xCD9C;(6.1)&#xD55C;&#xB2E4;. &#xCD94;&#xCD9C;&#xD55C; &#xD568;&#xC218;&#xC5D0; &#xAE30;&#xC5B5;&#xD558;&#xAE30; &#xC26C;&#xC6B4; &#xC784;&#xC2DC; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC5B4;&#xC900;&#xB2E4;.
+4. &#xB2E4;&#xB978; &#xD638;&#xCD9C;&#xC790; &#xBAA8;&#xB450;&#xAC00; &#xBC29;&#xAE08; &#xCD94;&#xCD9C;&#xD55C; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC218;&#xC815;&#xD55C;&#xB2E4;. &#xD558;&#xB098;&#xC529; &#xC218;&#xC815;&#xD560; &#xB54C;&#xB9C8;&#xB2E4; &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;.
+5. &#xBAA8;&#xB4E0; &#xD638;&#xCD9C;&#xC790;&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xB418;&#xBA74; &#xC6D0;&#xB798; &#xD568;&#xC218;&#xB97C; &#xC0C8;&#xB85C;&#xC6B4; &#xD568;&#xC218; &#xC548;&#xC73C;&#xB85C; &#xC778;&#xB77C;&#xC778;(6.2)&#xD55C; &#xD6C4; &#xC6D0;&#xD574; &#xD568;&#xC218;&#xB97C; &#xC81C;&#xAC70;&#xD55C;&#xB2E4;.
+6. &#xC0C8;&#xB85C;&#xC6B4; &#xD568;&#xC218;&#xC758; &#xC774;&#xB984;&#xC744; &#xC6D0;&#xB798; &#xD568;&#xC218;&#xC758; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xBC14;&#xAFD4;&#xC900;&#xB2E4;(6.5). (&#xB354; &#xB098;&#xC740; &#xC774;&#xB984;&#xC774; &#xC788;&#xB2E4;&#xBA74; &#xADF8; &#xC774;&#xB984;&#xC744; &#xC4F4;&#xB2E4;)
+</details>
+</li>
+<li><p>&#xBB38;&#xC7A5;&#xC744; &#xD638;&#xCD9C;&#xD55C; &#xACF3;&#xC73C;&#xB85C; &#xC62E;&#xAE30;&#xAE30;</p>
+<blockquote>
+<p>&#xD568;&#xC218;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xCABC;&#xAC1C;&#xC11C; &#xBB38;&#xC7A5;&#xC744; &#xBC16;&#xC73C;&#xB85C; &#xC774;&#xB3D9;<br>&#xACBD;&#xC6B0;&#xC5D0; &#xB530;&#xB77C; &#xBB38;&#xC7A5;&#xC744; &#xB354; &#xC2AC;&#xB77C;&#xC774;&#xC2A4; &#xD558;&#xAC70;&#xB098; &#xD568;&#xC218;&#xB85C; &#xCD94;&#xCD9C;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC74C;</p>
+</blockquote>
+<ul>
+<li>&#xD568;&#xC218;&#xAC00; &#xB458; &#xC774;&#xC0C1;&#xC758; &#xB2E4;&#xB978; &#xC77C;&#xC744; &#xD558;&#xB294;&#xB370;, &#xADF8; &#xC911; &#xD558;&#xB098;&#xB9CC; &#xBCC0;&#xACBD;&#xC774; &#xD544;&#xC694;&#xD560; &#xB54C;</li>
+</ul>
+<details>
+<summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
+
+```js
+// Before
+emitPhotoData(outStream, person.photo)
+
+function emitPhotoData(outStream, photo) {
+  outStream.write(`<p>&#xC81C;&#xBAA9;: ${photo.title}</p>\n`)
+  outStream.write(`<p>&#xC704;&#xCE58;: ${photo.location}</p>\n`)
+}
+```
+
+```js
+// After
+emitPhotoData(outStream, person.photo)
+outStream.write(`<p>&#xC704;&#xCE58;: ${person.photo.location}</p>\n`)
+
+function emitPhotoData(outStream, photo) {
+  outStream.write(`<p>&#xC81C;&#xBAA9;: ${photo.title}</p>\n`)
+}
+```
+
+</details>
+
+<details>
+<summary>&#xC808;&#xCC28;</summary>
+
+1. &#xD638;&#xCD9C;&#xC790;&#xAC00; &#xD55C;&#xB450; &#xAC1C;&#xBFD0;&#xC774;&#xACE0; &#xD53C;&#xD638;&#xCD9C; &#xD568;&#xC218;&#xB3C4; &#xAC04;&#xB2E8;&#xD55C; &#xB2E8;&#xC21C;&#xD55C; &#xC0C1;&#xD669;&#xC774;&#xBA74;, &#xD53C;&#xD638;&#xCD9C; &#xD568;&#xC218;&#xC758; &#xCC98;&#xC74C;(&#xD639;&#xC740; &#xB9C8;&#xC9C0;&#xB9C9;)&#xC904;(&#xB4E4;)&#xC744; &#xC798;&#xB77C;&#xB0B4;&#xC5B4; &#xD638;&#xCD9C;&#xC790;(&#xB4E4;)&#xB85C; &#xBCF5;&#xC0AC;&#xD574; &#xB123;&#xB294;&#xB2E4;(&#xD544;&#xC694;&#xD558;&#xBA74; &#xC801;&#xB2F9;&#xD788; &#xC218;&#xC815;&#xD55C;&#xB2E4;). &#xD14C;&#xC2A4;&#xD2B8;&#xB9CC; &#xD1B5;&#xACFC;&#xD558;&#xBA74; &#xC774;&#xBC88; &#xB9AC;&#xD329;&#xD1A0;&#xB9C1;&#xC740; &#xC5EC;&#xAE30;&#xC11C; &#xB05D;&#xC774;&#xB2E4;.
+2. &#xB354; &#xBCF5;&#xC7A1;&#xD55C; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;&#xB294;, &#xC774;&#xB3D9;&#xD558;&#xC9C0; &apos;&#xC54A;&#xAE38;&apos; &#xC6D0;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xBB38;&#xC7A5;&#xC744; &#xD568;&#xC218;&#xB85C; &#xCD94;&#xCD9C;(6.1)&#xD55C; &#xB2E4;&#xC74C; &#xAC80;&#xC0C9;&#xD558;&#xAE30; &#xC26C;&#xC6B4; &#xC784;&#xC2DC; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC5B4;&#xC900;&#xB2E4;.
+3. &#xC6D0;&#xB798; &#xD568;&#xC218;&#xB97C; &#xC778;&#xB77C;&#xC778;(6.2)&#xD55C;&#xB2E4;.
+4. &#xCD94;&#xCD9C;&#xB41C; &#xD568;&#xC218;&#xC758; &#xC774;&#xB984;&#xC744; &#xC6D0;&#xB798; &#xD568;&#xC218;&#xC758; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;(6.5). (&#xB354; &#xB098;&#xC740; &#xC774;&#xB984;&#xC774; &#xC788;&#xB2E4;&#xBA74; &#xADF8; &#xC774;&#xB984;&#xC744; &#xC4F4;&#xB2E4;)
+</details>
+</li>
+<li><p>&#xC778;&#xB77C;&#xC778; &#xCF54;&#xB4DC;&#xB97C; &#xD568;&#xC218; &#xD638;&#xCD9C;&#xB85C; &#xBC14;&#xAFB8;&#xAE30;</p>
+<blockquote>
+<p>&#xB611;&#xAC19;&#xC740; &#xCF54;&#xB4DC;&#xB97C; &#xBC18;&#xBCF5;&#xD558;&#xB294; &#xB300;&#xC2E0; &#xD568;&#xC218; &#xD638;&#xCD9C;&#xB85C; &#xBCC0;&#xACBD;<br>&#xD574;&#xB2F9; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC774;&#xBBF8; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;&#xBA74; &#xC774; &#xBC29;&#xBC95; &#xC0AC;&#xC6A9;<br>&#xD574;&#xB2F9; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74; &#xD568;&#xC218; &#xCD94;&#xCD9C;&#xD558;&#xAE30;(6.1) &#xC0AC;&#xC6A9;</p>
+</blockquote>
+<ul>
+<li>&#xB3D9;&#xC77C;&#xD55C; &#xBAA9;&#xC801;&#xC758; &#xAC19;&#xC740; &#xCF54;&#xB4DC;&#xAC00; &#xBC18;&#xBCF5; &#xC0AC;&#xC6A9;&#xB418;&#xACE0;, &#xD574;&#xB2F9; &#xBAA9;&#xC801;&#xC758; &#xD568;&#xC218;&#xAC00; &#xC874;&#xC7AC;&#xD560; &#xB54C;<ul>
+<li>(&#xC6B0;&#xC5F0;&#xD788;) &#xAC19;&#xC740; &#xCF54;&#xB4DC;&#xAC00; &#xC788;&#xB354;&#xB77C;&#xB3C4; &#xB2E4;&#xB978; &#xBAA9;&#xC801;&#xC774;&#xB77C;&#xBA74; &#xC801;&#xC6A9; X</li>
+</ul>
+</li>
+</ul>
+<details>
+<summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
+
+```js
+// Before
+let appliesToMass = false
+for (const s of states) {
+  if (s === &apos;MA&apos;) {
+    appliesToMass = true
+  }
+}
+```
+
+```js
+// After
+aookuesToMass = states.includes(&apos;MA&apos;)
+```
+
+</details>
+
+<details>
+<summary>&#xC808;&#xCC28;</summary>
+
+1. &#xC778;&#xB77C;&#xC778; &#xCF54;&#xB4DC;&#xB97C; &#xD568;&#xC218; &#xD638;&#xCD9C;&#xB85C; &#xB300;&#xCCB4;&#xD55C;&#xB2E4;.
+2. &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;.
+</details>
+</li>
+<li><p>&#xBB38;&#xC7A5; &#xC2AC;&#xB77C;&#xC774;&#xB4DC;&#xD558;&#xAE30;</p>
+<blockquote>
+<p>&#xAD00;&#xB828; &#xC788;&#xB294; &#xCF54;&#xB4DC;&#xB4E4;&#xC744; &#xD55C; &#xACF3;&#xC73C;&#xB85C; &#xBB49;&#xCE58;&#xB3C4;&#xB85D; &#xC774;&#xB3D9;</p>
+</blockquote>
+<ul>
+<li>&#xAD00;&#xB828;&#xC788;&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xD769;&#xC5B4;&#xC838; &#xC788;&#xC744; &#xB54C;</li>
+</ul>
+<details>
+<summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
+
+```js
+// Before
+const pricingPlan = retrievePricingPlan()
+const order = retreiveOrder()
+let charge
+const chargePerUnit = pricingPlan.unit
+```
+
+```js
+// After
+const pricingPlan = retrievePricingPlan()
+const chargePerUnit = pricingPlan.unit
+const order = retreiveOrder()
+let charge
+```
+
+</details>
+
+<details>
+<summary>&#xC808;&#xCC28;</summary>
+
+1. &#xCF54;&#xB4DC; &#xC870;&#xAC01;(&#xBB38;&#xC7A5;&#xB4E4;)&#xC744; &#xC774;&#xB3D9;&#xD560; &#xBAA9;&#xD45C; &#xC704;&#xCE58;&#xB97C; &#xCC3E;&#xB294;&#xB2E4;. &#xCF54;&#xB4DC; &#xC870;&#xAC01;&#xC758; &#xC6D0;&#xB798; &#xC704;&#xCE58;&#xC640; &#xBAA9;&#xD45C; &#xC704;&#xCE58; &#xC0AC;&#xC774;&#xC758; &#xCF54;&#xB4DC;&#xB4E4;&#xC744; &#xD6D1;&#xC5B4;&#xBCF4;&#xBA74;&#xC11C;, &#xC870;&#xAC01;&#xC744; &#xBAA8;&#xC73C;&#xACE0; &#xB098;&#xBA74; &#xB3D9;&#xC791;&#xC774; &#xB2EC;&#xB77C;&#xC9C0;&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xC788;&#xB294;&#xC9C0; &#xC0B4;&#xD540;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC04;&#xC12D;&#xC774; &#xC788;&#xB2E4;&#xBA74; &#xC774; &#xB9AC;&#xD329;&#xD1A0;&#xB9C1;&#xC744; &#xD3EC;&#xAE30;&#xD55C;&#xB2E4;.
+   - &#xCF54;&#xB4DC; &#xC870;&#xAC01;&#xC5D0;&#xC11C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xC694;&#xC18C;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xBB38;&#xC7A5; &#xC55E;&#xC73C;&#xB85C;&#xB294; &#xC774;&#xB3D9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.
+   - &#xCF54;&#xB4DC; &#xC870;&#xAC01;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB294; &#xC694;&#xC18C;&#xC758; &#xB4A4;&#xB85C;&#xB294; &#xC774;&#xB3D9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.
+   - &#xCF54;&#xB4DC; &#xC870;&#xAC01;&#xC5D0;&#xC11C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xC694;&#xC18C;&#xB97C; &#xC218;&#xC815;&#xD558;&#xB294; &#xBB38;&#xC7A5;&#xC744; &#xAC74;&#xB108;&#xB6F0;&#xC5B4; &#xC774;&#xB3D9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.
+   - &#xCF54;&#xB4DC; &#xC870;&#xAC01;&#xC774; &#xC218;&#xC815;&#xD558;&#xB294; &#xC694;&#xC18C;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB294; &#xC694;&#xC18C;&#xB97C; &#xAC74;&#xB108;&#xB6F0;&#xC5B4; &#xC774;&#xB3D9;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.
+2. &#xCF54;&#xB4DC; &#xC870;&#xAC01;&#xC744; &#xC6D0;&#xB798; &#xC704;&#xCE58;&#xC5D0;&#xC11C; &#xC798;&#xB77C;&#xB0B4;&#xC5B4; &#xBAA9;&#xD45C; &#xC704;&#xCE58;&#xC5D0; &#xBD99;&#xC5EC; &#xB123;&#xB294;&#xB2E4;.
+3. &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;.
+</details>
+</li>
+<li><p>&#xBC18;&#xBCF5;&#xBB38; &#xCABC;&#xAC1C;&#xAE30;</p>
+<blockquote>
+<p>&#xBC18;&#xBCF5;&#xBB38;&#xC744; &#xB2E8;&#xC77C; &#xBAA9;&#xC801;&#xB9CC;&#xC744; &#xC218;&#xD589;&#xD558;&#xB294; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xBC18;&#xBCF5;&#xBB38;&#xC73C;&#xB85C; &#xCABC;&#xAC1C;&#xAE30;<br>&#xB9AC;&#xD329;&#xD130;&#xB9C1;&#xACFC; &#xCD5C;&#xC801;&#xD654;&#xB294; &#xAD6C;&#xBD84;&#xD558;&#xC790;. &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xBC18;&#xBCF5;&#xBB38;&#xC774; &#xBCD1;&#xBAA9;&#xC774;&#xB77C;&#xB294;&#xAC8C; &#xBC1D;&#xD600;&#xC9C0;&#xBA74; &#xADF8;&#xB54C; &#xD569;&#xCE58;&#xB294;&#xAC74; &#xAC04;&#xB2E8;</p>
+</blockquote>
+<ul>
+<li>&#xBC18;&#xBCF5;&#xBB38; &#xD558;&#xB098;&#xC5D0;&#xC11C; &#xB450; &#xAC00;&#xC9C0; &#xC774;&#xC0C1;&#xC758; &#xC77C;&#xC744; &#xD560; &#xB54C;</li>
+</ul>
+<details>
+<summary>&#xAC1C;&#xC694; &#xCF54;&#xB4DC;</summary>
+
+```js
+// Before
+let averageAge = 0
+let totalSalary = 0
+for (const p of people) {
+  averageAge += p.age
+  totalSalary += p.salary
+}
+averageAge = averageAge / people.length
+```
+
+```js
+// After
+let totalSalary = 0
+for (const p of people) {
+  totalSalary += p.salary
+}
+
+let averageAge = 0
+for (const p of people) {
+  averageAge += p.age
+}
+averageAge = averageAge / people.length
+```
+
+</details>
+
+<details>
+<summary>&#xC808;&#xCC28;</summary>
+
+1. &#xBC18;&#xBCF5;&#xBB38;&#xC744; &#xBCF5;&#xC81C;&#xD574; &#xB450; &#xAC1C;&#xB85C; &#xB9CC;&#xB4E0;&#xB2E4;.
+2. &#xBC18;&#xBCF5;&#xBB38;&#xC774; &#xC911;&#xBCF5;&#xB418;&#xC5B4; &#xC0DD;&#xAE30;&#xB294; &#xBD80;&#xC218;&#xD6A8;&#xACFC;&#xB97C; &#xD30C;&#xC545;&#xD574;&#xC11C; &#xC81C;&#xAC70;&#xD55C;&#xB2E4;.
+3. &#xD14C;&#xC2A4;&#xD2B8;&#xD55C;&#xB2E4;.
+4. &#xC644;&#xB8CC;&#xB410;&#xC73C;&#xBA74;, &#xAC01; &#xBC18;&#xBCF5;&#xBB38;&#xC744; &#xD568;&#xC218;&#xB85C; &#xCD94;&#xCD9C;(6.1)&#xD560;&#xC9C0; &#xACE0;&#xBBFC;&#xD574;&#xBCF8;&#xB2E4;.
+</details>
+
+</li>
+</ol>
+<!-- 까지 황현구, 이후 기원님 -->
+<ol>
+<li>&#xBC18;&#xBCF5;&#xBB38;&#xC744; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC73C;&#xB85C; &#xBC14;&#xAFB8;&#xAE30;</li>
+</ol>
+<blockquote>
+<p>&#xBC18;&#xBCF5;&#xBB38;&#xC744; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xC5EC; &#xB17C;&#xB9AC;&#xC758; &#xD750;&#xB984;&#xC744; &#xC27D;&#xAC8C; &#xD30C;&#xC545;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+</blockquote>
+<pre><code>  &lt;details&gt;
+  &lt;summary&gt;&#xAC1C;&#xC694; &#xCF54;&#xB4DC;&lt;/summary&gt;
+</code></pre><pre><code class="lang-javascript">   <span class="hljs-keyword">const</span> names = []
+   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> person <span class="hljs-keyword">of</span> input) {
+     <span class="hljs-keyword">if</span> (person.job === <span class="hljs-string">&apos;programer&apos;</span>) {
+       names.push(person.name)
+     }
+   }
+</code></pre>
+<pre><code class="lang-javascript">   <span class="hljs-keyword">const</span> names = input
+    .filter((person) =&gt; person.job === <span class="hljs-string">&apos;programer&apos;</span>)
+    .map((person) =&gt; person.name)
+</code></pre>
+<pre><code>&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&#xC808;&#xCC28;&lt;/summary&gt;
+</code></pre><ol>
+<li>&#xBC18;&#xBCF5;&#xBB38;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xCEEC;&#xB809;&#xC158;&#xC744; &#xAC00;&#xB9AC;&#xD0A4;&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xD558;&#xB098; &#xB9CC;&#xB4E0;&#xB2E4;.</li>
+<li>&#xAC01;&#xAC01;&#xC758; &#xB2E8;&#xC704; &#xD589;&#xC704;&#xB97C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC5F0;&#xC0B0;&#xC73C;&#xB85C; &#xB300;&#xCCB4;&#xD55C;&#xB2E4;. &#xBC18;&#xBCF5;&#xBB38;&#xC758; &#xCCAB;&#xC904;&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD558;&#xBA70; &#xAC01; &#xB2E8;&#xC704;&#xC758; &#xD589;&#xC704;&#xB97C; &#xC218;&#xC815;&#xD55C; &#xB4A4; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC9C4;&#xD589;&#xD55C;&#xB2E4;.</li>
+<li>&#xC218;&#xC815;&#xC774; &#xC644;&#xB8CC;&#xB418;&#xBA74; &#xBC18;&#xBCF5;&#xBB38;&#xC744; &#xC81C;&#xAC70;&#xD55C;&#xB2E4;.
+&lt;/details&gt;<!-- TODO: 내용 작성 -->
+</li>
+</ol>
+<ol>
+<li><p>&#xC8FD;&#xC740; &#xCF54;&#xB4DC; &#xC81C;&#xAC70;&#xD558;&#xAE30;</p>
+<blockquote>
+<p>&#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xCF54;&#xB4DC;&#xB294; &#xC81C;&#xAC70;&#xD55C;&#xB2E4;. &#xB0A8;&#xACA8;&#xB193;&#xC73C;&#xBA74; &#xBCF5;&#xC7A1;&#xD558;&#xBA70; &#xB098;&#xC911;&#xC5D0; &#xB2E4;&#xC2DC; &#xC0AC;&#xC6A9;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;&#xBA74; &#xBC84;&#xC804; &#xAD00;&#xB9AC; &#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xC774;&#xC6A9;&#xD55C;&#xB2E4;.</p>
+<!-- TODO: 내용 작성 -->
+</blockquote>
+</li>
+</ol>
+<h2 id="&#xB17C;&#xC758;-&#xC0AC;&#xD56D;">&#xB17C;&#xC758; &#xC0AC;&#xD56D;</h2>
+<ul>
+<li>&#xC911;&#xCCA9;&#xD568;&#xC218;<br>285p&#xC5D0;&#xC11C; &#xC911;&#xCCA9;&#xD568;&#xC218;&#xB294; &#xB418;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4;&#xC9C0; &#xB9D0;&#xB77C;&#xACE0; &#xC5B8;&#xAE09;</li>
+<li><p>&#xAC1D;&#xCCB4;&#xC5D0;&#xC11C;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.make = <span class="hljs-string">&apos;Honda&apos;</span>
+    <span class="hljs-keyword">this</span>.model = <span class="hljs-string">&apos;Accord&apos;</span>
+    <span class="hljs-keyword">this</span>.color = <span class="hljs-string">&apos;white&apos;</span>
+  }
+
+  setMake(make) {
+    <span class="hljs-keyword">this</span>.make = make
+    <span class="hljs-comment">// &#xBA54;&#xBAA8;: &#xCCB4;&#xC774;&#xB2DD;&#xC744; &#xC704;&#xD574; this&#xB97C; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+  }
+
+  setModel(model) {
+    <span class="hljs-keyword">this</span>.model = model
+    <span class="hljs-comment">// &#xBA54;&#xBAA8;: &#xCCB4;&#xC774;&#xB2DD;&#xC744; &#xC704;&#xD574; this&#xB97C; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+  }
+
+  setColor(color) {
+    <span class="hljs-keyword">this</span>.color = color
+    <span class="hljs-comment">// &#xBA54;&#xBAA8;: &#xCCB4;&#xC774;&#xB2DD;&#xC744; &#xC704;&#xD574; this&#xB97C; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+  }
+
+  save() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.make, <span class="hljs-keyword">this</span>.model, <span class="hljs-keyword">this</span>.color)
+    <span class="hljs-comment">// &#xBA54;&#xBAA8;: &#xCCB4;&#xC774;&#xB2DD;&#xC744; &#xC704;&#xD574; this&#xB97C; &#xB9AC;&#xD134;&#xD569;&#xB2C8;&#xB2E4;.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>
+  }
+}
+<span class="hljs-keyword">const</span> car = <span class="hljs-keyword">new</span> Car()
+  .setColor(<span class="hljs-string">&apos;pink&apos;</span>)
+  .setMake(<span class="hljs-string">&apos;Ford&apos;</span>)
+  .setModel(<span class="hljs-string">&apos;F-150&apos;</span>)
+  .save()
+</code></pre>
+</li>
+</ul>
+<p><a href="https://github.com/qkraudghgh/clean-code-javascript-ko#%EB%A9%94%EC%86%8C%EB%93%9C-%EC%B2%B4%EC%9D%B4%EB%8B%9D%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%84%B8%EC%9A%94" target="_blank">https://github.com/qkraudghgh/clean-code-javascript-ko#%EB%A9%94%EC%86%8C%EB%93%9C-%EC%B2%B4%EC%9D%B4%EB%8B%9D%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%84%B8%EC%9A%94</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Chapter 07 - 캡슐화/pages/discussion.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 논의사항">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 08. 기능 이동","level":"2.7","depth":1,"previous":{"title":"논의사항","level":"2.6.10","depth":2,"path":"Chapter 07 - 캡슐화/pages/discussion.md","ref":"Chapter 07 - 캡슐화/pages/discussion.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://oss.navercorp.com/yujeong-jeon"},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"파이낸셜FE","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"리팩터링 2판 스터디","language":"ko","gitbook":"*"},"file":{"path":"Chapter 08 - 기능 이동/README.md","mtime":"2021-01-29T05:23:30.915Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-29T05:32:22.801Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
