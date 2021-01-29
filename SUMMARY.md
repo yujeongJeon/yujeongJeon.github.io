@@ -8,6 +8,8 @@
 * [Chapter 02](Chapter 02 - 리팩터링 원칙/README.md)
 * [Chapter 03](Chapter 03 - 코드에서 나는 악취/README.md)
 * [Chapter 04](Chapter 04 - 테스트 구축하기/README.md)
+    * [4-1. 개요](Chapter 04 - 테스트 구축하기/pages/previous.md)
+    * [4-2. 예시](Chapter 04 - 테스트 구축하기/pages/test_code.md)
 * [Chapter 06](Chapter 06 - 기본적인 리팩터링/README.md)
     * [6-1. 함수 추출하기](Chapter 06 - 기본적인 리팩터링/pages/6-1.md)
     * [6-2. 함수 인라인하기](Chapter 06 - 기본적인 리팩터링/pages/6-2.md)
