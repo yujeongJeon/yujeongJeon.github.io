@@ -1,6 +1,7 @@
 {
-    "plugins": ["-sharing", "expandable-chapters"],
-    "variables": {
-        "BASE_URL": "https://refactoring.github.io"
-    }
+    "plugins": [
+        "toggle-chapters",
+        "expandable-chapters-small"
+    ],
+    "language": "ko"
 }
