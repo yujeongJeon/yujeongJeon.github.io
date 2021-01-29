@@ -31,5 +31,6 @@
     * [7-7. 위임 숨기기](Chapter 07 - 캡슐화/pages/7-7.md)
     * [7-8. 중개자 제거하기](Chapter 07 - 캡슐화/pages/7-8.md)
     * [7-9. 알고리즘 교체하기](Chapter 07 - 캡슐화/pages/7-9.md)
+    * [논의사항](Chapter 07 - 캡슐화/pages/discussion.md)
 * [Chapter 08. 기능 이동](Chapter 08 - 기능 이동/README.md)
 
