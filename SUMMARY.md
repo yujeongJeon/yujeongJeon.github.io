@@ -43,4 +43,10 @@
     * [8-8. 반복문을 파이프라인으로 바꾸기](Chapter 08 - 기능 이동/pages/8-8.md)
     * [8-9. 죽은 코드 제거하기](Chapter 08 - 기능 이동/pages/8-9.md)
     * [논의사항](Chapter 08 - 기능 이동/pages/discussion.md)
-
+* [Chapter 09. 데이터 조직화](Chapter 09 - 데이터 조직화/README.md)
+    * [9-1. 변수 쪼개기](Chapter 09 - 데이터 조직화/pages/9-1.md)
+    * [9-2. 필드 이름 바꾸기](Chapter 09 - 데이터 조직화/pages/9-2.md)
+    * [9-3. 파생 변수를 질의 함수로 바꾸기](Chapter 09 - 데이터 조직화/pages/9-3.md)
+    * [9-4. 참조를 값으로 바꾸기](Chapter 09 - 데이터 조직화/pages/9-4.md)
+    * [9-5. 값을 참조로 바꾸기](Chapter 09 - 데이터 조직화/pages/9-5.md)
+    * [9-6. 매직 리터럴 바꾸기](Chapter 09 - 데이터 조직화/pages/9-6.md)

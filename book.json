@@ -1,20 +1,17 @@
 {
     "title": "리팩터링 2판 스터디",
-    "author": "파이낸셜FE",
+    "author": "yujeongJeon",
     "plugins": [
-      "toggle-chapters",
-      "expandable-chapters-small"
+        "toggle-chapters",
+        "expandable-chapters-small"
     ],
     "pluginsConfig": {
       "sitemap": {
-        "hostname": "https://oss.navercorp.com/yujeong-jeon"
+          "hostname": "https://github.com/yujeongJeon"
       }
     },
     "structure": {
-      "readme": "README.md"
+        "readme": "README.md"
     },
-    "language": "ko",
-    "variables": {
-      "BASE_URL": "https://financial-fe-refactoring.gitbook.com"
-    }
-  }
+    "language": "ko"
+}
