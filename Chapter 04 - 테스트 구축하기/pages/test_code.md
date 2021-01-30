@@ -3,14 +3,14 @@
     - 엑셀과 비슷한 기능이라 생각하면 된다.
     - 비지니스 로직은 생산자를 표현하는 Producer, 지역 전체를 표현하는 Province 두 개로 구성된다.
 
-    - ![provinceClass](../images/provinceClass.jpeg)
+    - Province 클래스
         - Province 클래스는 생성자를 통해 데이터를 받고, 이를 Private 변수에 할당한다.
         - Province 클래스는 게터와 세터로 이루어진 다양한 데이터 접근자들을 가지고 있다.
         - Province 클래스는 생상 부족분, 수익을 계산하는 멤버함수들을 가지고 있다.
     
     - sampleProvinceData 함수는 provinceClass의 인스턴스를 만들 때 생성자로 데이터를 밀어 넣어주는 함수다. 해당 함수의 테스트는 반환 값으로 Province 객체를 생성해보면 된다.
 
-    - ![producerClass](../images/producerClass.jpeg)
+    - Producer 클래스
         - Producer 클래스는 주로 데이터 저장소로 쓰인다. (게터 + 세터 + 내부변수)
 
 
