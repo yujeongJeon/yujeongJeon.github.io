@@ -836,26 +836,26 @@
 </code></pre>
 <h3 id="&#xC608;&#xC2DC;-&#xCF54;&#xB4DC;-2&#xFE0F;&#x20E3;">&#xC608;&#xC2DC; &#xCF54;&#xB4DC; 2&#xFE0F;&#x20E3;</h3>
 <h4 id="&#x1F61E;-before">&#x1F61E; Before</h4>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> showExitAlert = useCallback(() =&gt; {
-    <span class="hljs-keyword">const</span> exitAlertCode = step === <span class="hljs-string">&apos;4&apos;</span> ? SME_ALERT_CODE.EXIT.SAVE : SME_ALERT_CODE.EXIT.NOT_SAVE
-    showAlert(exitAlertCode)
-}, [showAlert, step])
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> showExistToast = () =&gt; {
+    <span class="hljs-keyword">const</span> exitAlertCode = step === <span class="hljs-string">&apos;4&apos;</span> ? <span class="hljs-string">&apos;&#xC800;&#xC7A5;&#xD558;&#xACE0; &#xC774;&#xD0C8;&apos;</span> : <span class="hljs-string">&apos;&#xC800;&#xC7A5;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC774;&#xD0C8;&apos;</span>
+    toast(exitAlertCode)
+}
 
-<span class="hljs-keyword">const</span> isValidReferer = useCallback(() =&gt; {
+<span class="hljs-keyword">const</span> isValidReferer = () =&gt; {
     <span class="hljs-keyword">switch</span> (step) {
         <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;4&apos;</span>:
             <span class="hljs-keyword">return</span> isSurlEnter(query)
         <span class="hljs-keyword">default</span>:
             <span class="hljs-keyword">return</span> isHomeEnter
     }
-}, [isHomeEnter, isSurlEnter, step, query])
+}
 </code></pre>
 <h4 id="&#x1F603;-after">&#x1F603; After</h4>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> lastStep = step === <span class="hljs-string">&apos;4&apos;</span>
 
-<span class="hljs-keyword">const</span> showExitAlert = () =&gt; {
-    <span class="hljs-keyword">const</span> exitAlertCode = lastStep ? SME_ALERT_CODE.EXIT.SAVE : SME_ALERT_CODE.EXIT.NOT_SAVE
-    showAlert(exitAlertCode)
+<span class="hljs-keyword">const</span> showExistToast = () =&gt; {
+    <span class="hljs-keyword">const</span> exitAlertCode = lastStep ? <span class="hljs-string">&apos;&#xC800;&#xC7A5;&#xD558;&#xACE0; &#xC774;&#xD0C8;&apos;</span> : <span class="hljs-string">&apos;&#xC800;&#xC7A5;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC774;&#xD0C8;&apos;</span>
+    toast(exitAlertCode)
 }
 
 <span class="hljs-keyword">const</span> isValidReferer = () =&gt; {
@@ -905,7 +905,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6-3. 변수 추출하기","level":"2.5.3","depth":2,"next":{"title":"6-4. 변수 인라인하기","level":"2.5.4","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","articles":[]},"previous":{"title":"6-2. 함수 인라인하기","level":"2.5.2","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://github.com/yujeongJeon"},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"yujeongJeon","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"리팩터링 2판 스터디","language":"ko","gitbook":"*"},"file":{"path":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","mtime":"2021-01-30T05:38:02.594Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T06:30:20.941Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6-3. 변수 추출하기","level":"2.5.3","depth":2,"next":{"title":"6-4. 변수 인라인하기","level":"2.5.4","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-4.md","articles":[]},"previous":{"title":"6-2. 함수 인라인하기","level":"2.5.2","depth":2,"path":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","ref":"Chapter 06 - 기본적인 리팩터링/pages/6-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://github.com/yujeongJeon"},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"yujeongJeon","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"리팩터링 2판 스터디","language":"ko","gitbook":"*"},"file":{"path":"Chapter 06 - 기본적인 리팩터링/pages/6-3.md","mtime":"2021-01-30T06:51:45.801Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T07:01:23.008Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
